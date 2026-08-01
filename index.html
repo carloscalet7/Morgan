@@ -1,299 +1,658 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Morgan | Minecraft Developer</title>
+<title>Morgan Studio | Minecraft Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Poppins,sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+scroll-behavior:smooth;
 }
+
 
 body{
-    background:#020a05;
-    color:white;
+
+background:#050505;
+
+color:white;
+
+overflow-x:hidden;
+
 }
+
+
+/* Fondo luces */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:600px;
+height:600px;
+
+background:#0066ff;
+
+filter:blur(200px);
+
+top:-200px;
+left:-200px;
+
+opacity:.35;
+
+z-index:-1;
+
+}
+
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:600px;
+height:600px;
+
+background:#a000ff;
+
+filter:blur(200px);
+
+bottom:-200px;
+right:-200px;
+
+opacity:.3;
+
+z-index:-1;
+
+}
+
+
+
+/* NAVBAR */
+
+
+nav{
+
+position:fixed;
+
+top:0;
+
+width:100%;
+
+padding:20px 8%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:#050505cc;
+
+backdrop-filter:blur(15px);
+
+z-index:100;
+
+}
+
+
+
+.logo{
+
+font-size:30px;
+
+font-weight:800;
+
+background:linear-gradient(90deg,#00eaff,#8a2cff);
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+}
+
+
+
+nav a{
+
+color:white;
+
+text-decoration:none;
+
+margin-left:25px;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+
+nav a:hover{
+
+color:#00eaff;
+
+}
+
+
+
+/* GENERAL */
+
 
 .container{
-    max-width:1000px;
-    margin:auto;
-    text-align:center;
-    padding:40px 20px;
+
+width:85%;
+
+max-width:1200px;
+
+margin:auto;
+
 }
 
-/* PERFIL */
 
-.profile img{
-    width:90px;
-    height:90px;
-    border-radius:20px;
-    object-fit:cover;
+
+section{
+
+padding:120px 0;
+
 }
 
-.country{
-    display:inline-block;
-    background:#0b2b16;
-    color:#00ff66;
-    padding:5px 15px;
-    border-radius:20px;
-    font-size:12px;
-    margin:15px;
+
+
+/* HERO */
+
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
 }
+
+
+
+.profile{
+
+width:230px;
+
+height:230px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:5px solid #00eaff;
+
+box-shadow:
+
+0 0 30px #00eaff,
+0 0 80px #7b00ff;
+
+animation:float 4s infinite;
+
+}
+
+
+
+@keyframes float{
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+}
+
+
 
 h1{
-    font-size:55px;
-    font-weight:800;
-}
 
-.green{
-    color:#00ff66;
-}
+font-size:70px;
 
-.subtitle{
-    color:#aaa;
-}
+margin-top:25px;
 
+font-weight:800;
 
-/* BOTONES */
+background:linear-gradient(90deg,#00eaff,#fff,#a000ff);
 
-button{
-    margin:20px 5px;
-    padding:12px 25px;
-    border-radius:10px;
-    border:1px solid #1d472d;
-    background:#00ff66;
-    color:black;
-    font-weight:bold;
+-webkit-background-clip:text;
+
+color:transparent;
+
 }
 
 
-/* SOBRE MI */
 
-.section{
-    margin-top:80px;
+.hero p{
+
+font-size:22px;
+
+color:#bbb;
+
 }
+
+
+
+.btn{
+
+display:inline-block;
+
+margin-top:35px;
+
+padding:15px 40px;
+
+border-radius:50px;
+
+background:linear-gradient(90deg,#0066ff,#a000ff);
+
+color:white;
+
+text-decoration:none;
+
+font-weight:700;
+
+transition:.4s;
+
+}
+
+
+
+.btn:hover{
+
+transform:scale(1.1);
+
+box-shadow:0 0 40px #0066ff;
+
+}
+
+
+
+/* TITULOS */
+
 
 .title{
-    font-size:35px;
+
+font-size:45px;
+
+text-align:center;
+
+margin-bottom:50px;
+
+background:linear-gradient(90deg,#00eaff,#a000ff);
+
+-webkit-background-clip:text;
+
+color:transparent;
+
 }
 
-.line{
-    width:35px;
-    height:3px;
-    background:#00ff66;
-    margin:15px auto;
+
+
+/* CARDS */
+
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:30px;
+
 }
 
 
-.about{
-    color:#aaa;
-    max-width:650px;
-    margin:auto;
+
+.card{
+
+background:#111;
+
+padding:35px;
+
+border-radius:25px;
+
+border:1px solid #222;
+
+transform-style:preserve-3d;
+
+transition:.4s;
+
+}
+
+
+
+.card:hover{
+
+transform:
+
+perspective(800px)
+
+rotateY(8deg)
+
+translateY(-10px);
+
+box-shadow:
+
+0 0 40px #0066ff55;
+
+}
+
+
+
+.card h3{
+
+color:#00eaff;
+
+margin-bottom:15px;
+
+}
+
+
+
+.icon{
+
+font-size:40px;
+
 }
 
 
 /* STATS */
 
+
 .stats{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:15px;
-    margin-top:40px;
-}
 
-.card{
-    width:180px;
-    padding:25px;
-    border:1px solid #12351f;
-    background:#06100a;
-    border-radius:15px;
-}
+display:flex;
 
-.card h2{
-    color:#00ff66;
-    font-size:30px;
+justify-content:center;
+
+gap:60px;
+
+flex-wrap:wrap;
+
+text-align:center;
+
 }
 
 
-/* HABILIDADES */
+.number{
 
-.skills{
-    margin-top:40px;
-}
+font-size:50px;
 
-.skill{
-    display:inline-block;
-    border:1px solid #12351f;
-    padding:8px 15px;
-    margin:5px;
-    border-radius:20px;
-    font-size:13px;
+font-weight:800;
+
+color:#00eaff;
+
 }
 
 
-/* PROYECTOS */
 
-.projects{
-    margin-top:80px;
+/* FOOTER */
+
+
+footer{
+
+padding:30px;
+
+text-align:center;
+
+background:#090909;
+
+color:#777;
+
 }
 
-.project{
-    background:#06100a;
-    border:1px solid #12351f;
-    padding:25px;
-    border-radius:15px;
-    margin:15px;
-}
+
 
 </style>
+
 </head>
 
 
 <body>
 
 
+<nav>
+
+<div class="logo">
+Morgan Studio
+</div>
+
+<div>
+
+<a href="#inicio">Inicio</a>
+<a href="#servicios">Servicios</a>
+<a href="#proyectos">Proyectos</a>
+<a href="#contacto">Contacto</a>
+
+</div>
+
+</nav>
+
+
+
+
+<section class="hero" id="inicio">
+
 <div class="container">
 
 
-<div class="profile">
+<img class="profile"
 
-<img src="https://cdn.discordapp.com/attachments/1513772002534494390/1532904144082305136/SaveTikTok.to_7554828542089973022_8.jpg">
+src="https://cdn.discordapp.com/attachments/1513772002534494390/1532904144082305136/SaveTikTok.to_7554828542089973022_8.jpg?ex=6a6e8bbb&is=6a6d3a3b&hm=18389f1ae6e3c419ac24a181362a43c47d886d9b0d367e330ae8a114e031ab23&">
 
-<div class="country">
-🇲🇽 México
-</div>
 
-<h1>Morgan</h1>
+<h1>
+MORGAN
+</h1>
 
-<p class="subtitle">
-Configurador & Minecraft Developer
+
+<p>
+Minecraft Developer • Configurator • Staff Manager
 </p>
 
 
-<button>Ver proyectos</button>
-<button>Contrátame</button>
+<a class="btn" href="#">
+Contactar
+</a>
+
 
 </div>
 
+</section>
 
 
-<div class="section">
 
-<p class="green">
-SOBRE MI
-</p>
+
+
+<section id="servicios">
+
+<div class="container">
 
 <h2 class="title">
-Quién soy
+Servicios
 </h2>
 
-<div class="line"></div>
+
+<div class="grid">
 
 
-<p class="about">
-Soy Morgan, configurador y desarrollador de servidores de Minecraft.
-Me especializo en configuración de plugins, creación de modos de juego,
-optimización y administración de servidores.
+<div class="card">
 
-Trabajo creando experiencias profesionales para comunidades de Minecraft
-y Discord.
+<div class="icon">
+💻
+</div>
+
+<h3>Developer</h3>
+
+<p>
+Creación de sistemas personalizados y soluciones para servidores.
 </p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">
+⚙️
+</div>
+
+<h3>Configurador</h3>
+
+<p>
+Configuración profesional de plugins, menús y permisos.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">
+🛡️
+</div>
+
+<h3>Staff</h3>
+
+<p>
+Administración y organización de comunidades Minecraft.
+</p>
+
+</div>
 
 
 </div>
 
+</div>
+
+</section>
+
+
+
+
+<section id="proyectos">
+
+<div class="container">
+
+<h2 class="title">
+Experiencia
+</h2>
 
 
 <div class="stats">
 
-<div class="card">
-<h2>+7</h2>
-<p>MESES<br>EXPERIENCIA</p>
+
+<div>
+
+<div class="number">
+5+
 </div>
 
-
-<div class="card">
-<h2>+5</h2>
-<p>PROYECTOS</p>
-</div>
-
-
-<div class="card">
-<h2>⚙️</h2>
-<p>CONFIGURADOR</p>
-</div>
-
-
-<div class="card">
-<h2>🛡️</h2>
-<p>EXPERIENCIA<br>STAFF</p>
-</div>
-
+Proyectos
 
 </div>
 
 
 
+<div>
 
-<div class="skills">
+<div class="number">
+7+
+</div>
 
-<span class="skill">⚙️ Configuración</span>
-<span class="skill">🔧 Plugins</span>
-<span class="skill">🛡️ Staff</span>
-<span class="skill">💬 Discord</span>
-<span class="skill">⚡ Optimización</span>
-<span class="skill">🏰 Builds</span>
-<span class="skill">🎮 Modos de juego</span>
-<span class="skill">✅ Compromiso 100%</span>
+Meses experiencia
 
 </div>
 
 
 
-<div class="projects">
+<div>
 
-<p class="green">
-PROYECTOS
-</p>
+<div class="number">
+24/7
+</div>
+
+Dedicación
+
+</div>
+
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<section id="contacto">
+
+<div class="container">
 
 <h2 class="title">
-Mi experiencia
+Contacto
 </h2>
 
-<div class="line"></div>
 
+<div class="card" style="text-align:center">
 
-<div class="project">
-<h3>Minecraft Servers</h3>
 <p>
-Configuración completa, plugins, sistemas personalizados
-y mantenimiento de servidores.
+¿Quieres mejorar tu servidor Minecraft?
 </p>
-</div>
 
+<br>
 
-<div class="project">
-<h3>Discord Communities</h3>
-<p>
-Creación y configuración de comunidades con bots,
-tickets y sistemas profesionales.
-</p>
-</div>
-
-
-</div>
-
+<a class="btn" href="https://discord.gg/6tqFJQcZ7" target="_blank">
+💬 Discord
+</a>
+<a class="btn" href="https://tiktok.com/@its.reid3" target="_blank">
+TikTok
+</a>    
+</a>
 
 
 </div>
+
+
+</div>
+
+</section>
+
+
+
+
+<footer>
+
+© 2026 Morgan Studio - Minecraft Development
+
+</footer>
+
+
 
 </body>
 </html>
