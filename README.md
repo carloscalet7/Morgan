@@ -46,6 +46,7 @@ Me especializo en configuraciones avanzadas, protección de regiones, optimizaci
 <img src="https://img.shields.io/badge/EssentialsX-22C55E?style=for-the-badge">
 
 </p>
+
 # 🎯 Objetivo
 
 Desarrollar servidores de Minecraft modernos, seguros y optimizados, cuidando cada detalle para ofrecer la mejor experiencia posible.
