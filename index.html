@@ -1,55 +1,299 @@
-<section class="stats">
-    <div class="stat-card">
-        <h2>+7</h2>
-        <p>MESES<br>EXPERIENCIA</p>
-    </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <div class="stat-card">
-        <h2>+5</h2>
-        <p>PROYECTOS</p>
-    </div>
+<title>Morgan | Minecraft Developer</title>
 
-    <div class="stat-card">
-        <h2>⚙️</h2>
-        <p>CONFIGURADOR</p>
-    </div>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
 
-    <div class="stat-card">
-        <h2>🛡️</h2>
-        <p>EXPERIENCIA<br>COMO STAFF</p>
-    </div>
-</section>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+}
+
+body{
+    background:#020a05;
+    color:white;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    text-align:center;
+    padding:40px 20px;
+}
+
+/* PERFIL */
+
+.profile img{
+    width:90px;
+    height:90px;
+    border-radius:20px;
+    object-fit:cover;
+}
+
+.country{
+    display:inline-block;
+    background:#0b2b16;
+    color:#00ff66;
+    padding:5px 15px;
+    border-radius:20px;
+    font-size:12px;
+    margin:15px;
+}
+
+h1{
+    font-size:55px;
+    font-weight:800;
+}
+
+.green{
+    color:#00ff66;
+}
+
+.subtitle{
+    color:#aaa;
+}
 
 
-<section class="skills">
-    <h2>Habilidades</h2>
+/* BOTONES */
 
-    <div class="skill-list">
-        <span>⚙️ Configuración</span>
-        <span>🔧 Plugins</span>
-        <span>🛡️ Staff</span>
-        <span>💬 Discord</span>
-        <span>⚡ Optimización</span>
-        <span>🏰 Builds</span>
-        <span>🎮 Modos de juego</span>
-        <span>✅ Compromiso 100%</span>
-    </div>
-</section>
+button{
+    margin:20px 5px;
+    padding:12px 25px;
+    border-radius:10px;
+    border:1px solid #1d472d;
+    background:#00ff66;
+    color:black;
+    font-weight:bold;
+}
 
 
-<section class="about">
-    <h2>Morgan</h2>
-    <h3>🎮 Minecraft Developer</h3>
+/* SOBRE MI */
 
-    <p>
-        Especializado en configuración de servidores, plugins y creación
-        de experiencias únicas dentro de Minecraft. Con experiencia en
-        administración de servidores, optimización, sistemas personalizados
-        y soporte como Staff.
-    </p>
+.section{
+    margin-top:80px;
+}
 
-    <p>
-        Me enfoco en crear proyectos profesionales, organizados y con la
-        mejor calidad posible. 🚀
-    </p>
-</section>
+.title{
+    font-size:35px;
+}
+
+.line{
+    width:35px;
+    height:3px;
+    background:#00ff66;
+    margin:15px auto;
+}
+
+
+.about{
+    color:#aaa;
+    max-width:650px;
+    margin:auto;
+}
+
+
+/* STATS */
+
+.stats{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:40px;
+}
+
+.card{
+    width:180px;
+    padding:25px;
+    border:1px solid #12351f;
+    background:#06100a;
+    border-radius:15px;
+}
+
+.card h2{
+    color:#00ff66;
+    font-size:30px;
+}
+
+
+/* HABILIDADES */
+
+.skills{
+    margin-top:40px;
+}
+
+.skill{
+    display:inline-block;
+    border:1px solid #12351f;
+    padding:8px 15px;
+    margin:5px;
+    border-radius:20px;
+    font-size:13px;
+}
+
+
+/* PROYECTOS */
+
+.projects{
+    margin-top:80px;
+}
+
+.project{
+    background:#06100a;
+    border:1px solid #12351f;
+    padding:25px;
+    border-radius:15px;
+    margin:15px;
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<div class="profile">
+
+<img src="https://cdn.discordapp.com/attachments/1513772002534494390/1532904144082305136/SaveTikTok.to_7554828542089973022_8.jpg">
+
+<div class="country">
+🇲🇽 México
+</div>
+
+<h1>Morgan</h1>
+
+<p class="subtitle">
+Configurador & Minecraft Developer
+</p>
+
+
+<button>Ver proyectos</button>
+<button>Contrátame</button>
+
+</div>
+
+
+
+<div class="section">
+
+<p class="green">
+SOBRE MI
+</p>
+
+<h2 class="title">
+Quién soy
+</h2>
+
+<div class="line"></div>
+
+
+<p class="about">
+Soy Morgan, configurador y desarrollador de servidores de Minecraft.
+Me especializo en configuración de plugins, creación de modos de juego,
+optimización y administración de servidores.
+
+Trabajo creando experiencias profesionales para comunidades de Minecraft
+y Discord.
+</p>
+
+
+</div>
+
+
+
+<div class="stats">
+
+<div class="card">
+<h2>+7</h2>
+<p>MESES<br>EXPERIENCIA</p>
+</div>
+
+
+<div class="card">
+<h2>+5</h2>
+<p>PROYECTOS</p>
+</div>
+
+
+<div class="card">
+<h2>⚙️</h2>
+<p>CONFIGURADOR</p>
+</div>
+
+
+<div class="card">
+<h2>🛡️</h2>
+<p>EXPERIENCIA<br>STAFF</p>
+</div>
+
+
+</div>
+
+
+
+
+<div class="skills">
+
+<span class="skill">⚙️ Configuración</span>
+<span class="skill">🔧 Plugins</span>
+<span class="skill">🛡️ Staff</span>
+<span class="skill">💬 Discord</span>
+<span class="skill">⚡ Optimización</span>
+<span class="skill">🏰 Builds</span>
+<span class="skill">🎮 Modos de juego</span>
+<span class="skill">✅ Compromiso 100%</span>
+
+</div>
+
+
+
+<div class="projects">
+
+<p class="green">
+PROYECTOS
+</p>
+
+<h2 class="title">
+Mi experiencia
+</h2>
+
+<div class="line"></div>
+
+
+<div class="project">
+<h3>Minecraft Servers</h3>
+<p>
+Configuración completa, plugins, sistemas personalizados
+y mantenimiento de servidores.
+</p>
+</div>
+
+
+<div class="project">
+<h3>Discord Communities</h3>
+<p>
+Creación y configuración de comunidades con bots,
+tickets y sistemas profesionales.
+</p>
+</div>
+
+
+</div>
+
+
+
+</div>
+
+</body>
+</html>
