@@ -38,24 +38,6 @@ Me especializo en configuraciones avanzadas, protección de regiones, optimizaci
 
 <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=20&duration=2200&pause=800&color=22C55E&center=true&vCenter=true&width=700&lines=🛡️+WorldGuard;🏗️+WorldEdit;⚙️+Plugin+Configuration;👑+LuckPerms;📦+PlaceholderAPI;🔧+EssentialsX" />
 
----
-
-# 📂 Proyectos
-
-✔️ Configuración profesional de servidores
-
-✔️ Sistemas personalizados
-
-✔️ Protección avanzada con WorldGuard
-
-✔️ Edición de mapas con WorldEdit
-
-✔️ Optimización y rendimiento
-
-✔️ Configuración completa de plugins
-
----
-
 # 🎯 Objetivo
 
 Desarrollar servidores de Minecraft modernos, seguros y optimizados, cuidando cada detalle para ofrecer la mejor experiencia posible.
