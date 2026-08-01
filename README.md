@@ -34,10 +34,18 @@ Me especializo en configuraciones avanzadas, protección de regiones, optimizaci
 
 ---
 
-# ⚡ Especialidades
+## ⚡ Especialidades
 
-<img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=20&duration=2200&pause=800&color=22C55E&center=true&vCenter=true&width=700&lines=🛡️+WorldGuard;🏗️+WorldEdit;⚙️+Plugin+Configuration;👑+LuckPerms;📦+PlaceholderAPI;🔧+EssentialsX" />
+<p align="center">
 
+<img src="https://img.shields.io/badge/WorldGuard-22C55E?style=for-the-badge&logo=minecraft&logoColor=white">
+<img src="https://img.shields.io/badge/WorldEdit-22C55E?style=for-the-badge&logo=minecraft&logoColor=white">
+<img src="https://img.shields.io/badge/Plugin%20Configuration-22C55E?style=for-the-badge">
+<img src="https://img.shields.io/badge/LuckPerms-22C55E?style=for-the-badge">
+<img src="https://img.shields.io/badge/PlaceholderAPI-22C55E?style=for-the-badge">
+<img src="https://img.shields.io/badge/EssentialsX-22C55E?style=for-the-badge">
+
+</p>
 # 🎯 Objetivo
 
 Desarrollar servidores de Minecraft modernos, seguros y optimizados, cuidando cada detalle para ofrecer la mejor experiencia posible.
