@@ -1,330 +1,120 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Morgan | Minecraft Manager & Builder</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morgan | Morgan Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
-}
-
-body{
-background:#0b0b0b;
-color:#fff;
-}
-
-header{
-height:100vh;
-background:
-linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.75)),
-url("https://cdn.discordapp.com/attachments/1513772002534494390/1532904144082305136/SaveTikTok.to_7554828542089973022_8.jpg?ex=6a6e8bbb&is=6a6d3a3b&hm=18389f1ae6");
-background-size:cover;
-background-position:center;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
-
-.hero{
-max-width:850px;
-}
-
-.hero span{
-display:inline-block;
-padding:8px 18px;
-background:#00ff66;
-color:#000;
-border-radius:50px;
-font-weight:700;
-margin-bottom:20px;
-}
-
-.hero h1{
-font-size:70px;
-font-weight:800;
-}
-
-.hero h2{
-font-size:28px;
-margin-top:10px;
-color:#00ff66;
-}
-
-.hero p{
-margin-top:20px;
-font-size:18px;
-line-height:1.8;
-color:#ddd;
-}
-
-.buttons{
-margin-top:40px;
-}
-
-.btn{
-display:inline-block;
-padding:15px 35px;
-margin:10px;
-border-radius:40px;
-text-decoration:none;
-font-weight:700;
-background:#00ff66;
-color:#000;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-5px);
-}
-
-section{
-padding:80px 10%;
-}
-
-.title{
-text-align:center;
-font-size:40px;
-margin-bottom:50px;
-color:#00ff66;
-}
-
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.card{
-background:#141414;
-padding:30px;
-border-radius:18px;
-text-align:center;
-border:1px solid #222;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-border-color:#00ff66;
-}
-
-.card h3{
-font-size:45px;
-color:#00ff66;
-}
-
-.card p{
-margin-top:10px;
-color:#aaa;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
-}
-
-.box{
-background:#141414;
-padding:30px;
-border-radius:18px;
-border-left:5px solid #00ff66;
-transition:.3s;
-}
-
-.box:hover{
-transform:translateY(-8px);
-}
-
-.box h3{
-margin-bottom:15px;
-color:#00ff66;
-}
-
-.box p{
-color:#bbb;
-line-height:1.8;
-}
-
-footer{
-background:#080808;
-padding:40px;
-text-align:center;
-}
-
-footer h2{
-color:#00ff66;
-margin-bottom:10px;
-}
-
-footer p{
-color:#999;
-margin:5px;
-}
-
+:root{--green:#22FF66;--bg:#050A06;--card:#0E1511;--border:#1E3322}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:#fff;font-family:'Inter',sans-serif}
+.pixel{font-family:'Press Start 2P',cursive}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 50px;background:#050A06;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:99}
+.logo{color:var(--green);font-size:13px}
+nav a{color:#6B7E70;margin-left:25px;text-decoration:none;font-size:13px}
+.hero{text-align:center;padding:100px 20px 60px}
+.avatar{width:140px;height:140px;margin:0 auto 20px;border-radius:28px;border:2px solid var(--green);box-shadow:0 0 50px rgba(34,255,102,.45);overflow:hidden;background:#111}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.tag{border:1px solid var(--border);background:#0A160D;color:var(--green);padding:7px 16px;border-radius:100px;font-size:12px}
+h1{font-size:62px;margin:25px 0 12px}
+.sub{color:#8AA08E;font-size:19px;line-height:1.6}
+.green{color:var(--green)}
+.btns{margin-top:35px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{padding:15px 28px;border-radius:12px;font-weight:800;text-decoration:none;font-size:14px;transition:.2s}
+.btn-primary{background:var(--green);color:#000;box-shadow:0 0 25px rgba(34,255,102,.5)}
+.btn-dark{background:#131F15;border:1px solid var(--border);color:#fff}
+section{max-width:1180px;margin:0 auto;padding:80px 24px}
+.section-label{text-align:center;color:var(--green);font-size:9px;letter-spacing:3px;margin-bottom:12px}
+.title{text-align:center;font-size:22px}
+.line{width:50px;height:3px;background:var(--green);margin:14px auto 40px;border-radius:10px}
+.grid-2{display:grid;grid-template-columns:1.4fr .6fr;gap:20px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:26px}
+.badge{background:#111D13;border:1px solid var(--border);padding:7px 12px;border-radius:8px;font-size:11px;color:#A0B5A3;margin:4px;display:inline-block}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat{text-align:center;padding:20px 10px}
+.stat b{color:var(--green);font-size:18px;display:block;margin-bottom:6px}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.projects h4{font-size:16px}
+.projects small{color:var(--green);font-weight:800;font-size:10px;letter-spacing:1px}
+.projects p{color:#8AA08E;font-size:13px;margin-top:12px;line-height:1.7}
+@media(max-width:900px){.grid-2,.projects{grid-template-columns:1fr} h1{font-size:34px} nav{padding:16px 20px} nav div:last-child{display:none}}
 </style>
-
 </head>
 <body>
 
-<header>
+<nav><div class="logo pixel">/MORGAN STUDIO</div><div><a href="#sobre">Sobre mí</a><a href="#proyectos">Proyectos</a><a href="#estudio">Studio</a><a href="#contacto">Contacto</a></div></nav>
 
 <div class="hero">
-
-<span>MINECRAFT PORTFOLIO</span>
-
-<h1>Morgan</h1>
-
-<h2>Minecraft Manager & Builder 🇲🇽</h2>
-
-<p>
-Especializado en la administración de servidores Minecraft, gestión de
-equipos de Staff, organización de eventos, atención a jugadores y creación
-de mapas, spawns, lobbies y construcciones personalizadas para cualquier
-modalidad.
-</p>
-
-<div class="buttons">
-
-<a href="#about" class="btn">Ver Portafolio</a>
-
-<a href="#contact" class="btn">Contacto</a>
-
+<div class="avatar"><img src="avatar.jpg" alt="Morgan"></div>
+<span class="tag">👑 Morgan Studio - CrayzBox Owner</span>
+<h1 class="pixel">Morgan</h1>
+<p class="sub">Founder de <span class="green">Morgan Studio</span> & Owner de <span class="green">crayzbox.xyz</span><br>Desarrollador Minecraft | BoxPvP Specialist</p>
+<div class="btns">
+<a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
+<a href="https://discord.com/users/carlos061733" class="btn btn-dark">Discord: carlos061733</a>
+</div>
 </div>
 
+<section id="sobre">
+<p class="section-label pixel">SOBRE MI</p><h2 class="title pixel">Quién soy</h2><div class="line"></div>
+<div class="grid-2">
+<div class="card">
+<p style="color:#A0B5A3;line-height:1.8;font-size:14px">Soy <b style="color:#fff">Morgan</b>, fundador de <b style="color:#fff">Morgan Studio</b>. Un estudio dedicado a la creación y desarrollo de servidores de Minecraft profesionales.<br><br>Empecé como jugador y ahora soy Dev en 2 servidores y Owner de mi propia network <b style="color:var(--green)">crayzbox.xyz</b>. En Morgan Studio ofrecemos configuraciones optimizadas, sistemas custom y un diseño que retiene jugadores.</p>
+<div style="margin-top:20px"><span class="badge">⚙️ Morgan Studio</span><span class="badge">💻 Dev Minecraft</span><span class="badge">👑 CrayzBox Owner</span><span class="badge">⚡ Optimización</span><span class="badge">💬 Discord: carlos061733</span></div>
 </div>
-
-</header>
-
-<section id="about">
-
-<h2 class="title">Experiencia</h2>
-
 <div class="stats">
-
-<div class="card">
-<h3>100+</h3>
-<p>Jugadores atendidos</p>
+<div class="card stat"><b class="pixel">crayzbox.xyz</b><small>IP OFICIAL</small></div>
+<div class="card stat"><b class="pixel">3</b><small>PROYECTOS</small></div>
+<div class="card stat"><b class="pixel">+1</b><small>AÑO DEV</small></div>
+<div class="card stat"><b class="pixel">MORGAN</b><small>STUDIO</small></div>
 </div>
-
-<div class="card">
-<h3>8+</h3>
-<p>Meses de experiencia</p>
 </div>
-
-<div class="card">
-<h3>5+</h3>
-<p>Eventos organizados</p>
-</div>
-
-<div class="card">
-<h3>3+</h3>
-<p>Servidores administrados</p>
-</div>
-
-</div>
-
 </section>
 
-<section>
+<section id="proyectos">
+<p class="section-label pixel">EXPERIENCIA</p><h2 class="title pixel">Mis proyectos</h2><div class="line"></div>
+<div class="projects">
 
-<h2 class="title">Servicios</h2>
-
-<div class="grid">
-
-<div class="box">
-<h3>👑 Manager</h3>
-<p>
-Administración de servidores, gestión del Staff, resolución de conflictos,
-atención a jugadores, reportes, organización y supervisión de la comunidad.
-</p>
+<div class="card">
+<h4>BockieMC</h4><small>DEV OFICIAL</small>
+<p>Dev oficial. Encargado de plugins, sistemas de rangos, crates, configuración de TPS y anti-cheat. Trabajo diario para mantener el server sin lag y con contenido nuevo.</p>
+<span class="badge">Dev</span><span class="badge">Optimización</span>
 </div>
 
-<div class="box">
-<h3>🏗 Builder</h3>
-<p>
-Construcción de Spawns, Lobbies, Warps, Arenas, Decoraciones,
-Terraforming y mapas personalizados para cualquier modalidad.
-</p>
+<div class="card">
+<h4>Minehave</h4><small>DEV OFICIAL</small>
+<p>Desarrollador en Minehave. Configuración de lobby, economía, tiendas, BattlePass y eventos. Actualizaciones constantes junto al equipo de construcción.</p>
+<span class="badge">Dev</span><span class="badge">Sistemas</span>
 </div>
 
-<div class="box">
-<h3>🎉 Eventos</h3>
-<p>
-Organización de eventos semanales, dinámicas para jugadores y actividades
-para aumentar la participación de la comunidad.
-</p>
-</div>
-
-<div class="box">
-<h3>🛡 Staff</h3>
-<p>
-Capacitación, supervisión y evaluación del equipo de moderación y
-administración.
-</p>
+<div class="card" style="border-color:var(--green);box-shadow:0 0 30px rgba(34,255,102,.25)">
+<h4>CrayzBox - crayzbox.xyz</h4><small>OWNER DE MORGAN STUDIO</small>
+<p><b style="color:#fff">Proyecto principal de Morgan Studio.</b> BoxPvP con minas custom, clanes, prestigios y PvP balanceado. IP: <b style="color:var(--green)">crayzbox.xyz</b>. Todo el proyecto es mío, desde el logo hasta el código.</p>
+<span class="badge">⭐ Owner</span><span class="badge">crayzbox.xyz</span><span class="badge">Morgan Studio</span>
 </div>
 
 </div>
-
 </section>
 
-<section>
-
-<h2 class="title">¿Por qué elegirme?</h2>
-
-<div class="grid">
-
-<div class="box">
-<h3>✔ Responsable</h3>
-<p>Cumplo horarios y objetivos.</p>
+<section id="estudio">
+<div class="card" style="text-align:center;padding:50px 20px;background:linear-gradient(180deg,#0E1511,#0A100C)">
+<p class="section-label pixel">MI MARCA</p>
+<h2 class="pixel" style="font-size:20px">Morgan <span class="green">Studio</span></h2>
+<p style="color:#8AA08E;margin:14px auto 0;max-width:600px;line-height:1.6;font-size:14px">Morgan Studio es mi estudio donde ofrezco servicios de Dev, Configuración completa y creación de servidores de Minecraft y Discord. Si buscas calidad, contactame por Discord: <b style="color:#fff">carlos061733</b></p>
 </div>
-
-<div class="box">
-<h3>✔ Profesional</h3>
-<p>Trabajo serio y organizado.</p>
-</div>
-
-<div class="box">
-<h3>✔ Creativo</h3>
-<p>Construcciones únicas y llamativas.</p>
-</div>
-
-<div class="box">
-<h3>✔ Comprometido</h3>
-<p>Siempre busco mejorar la experiencia de los jugadores.</p>
-</div>
-
-</div>
-
 </section>
 
-<footer id="contact">
-
-<h2>Morgan</h2>
-
-<p>Minecraft Manager & Builder</p>
-
-<p>Discord: carlos061733</p>
-
-<p>TikTok: @tiktok.com/@its.reid3</p>
-
-<p>GitHub: github.com/carloscalet7</p>
-
-<p>© 2026 Morgan. Todos los derechos reservados.</p>
-
-</footer>
+<section id="contacto">
+<div class="card" style="text-align:center;padding:60px 20px">
+<h2 class="pixel" style="font-size:18px">¿Quieres un server como CrayzBox?</h2>
+<p style="color:#8AA08E;margin:16px 0 30px">Hablemos por Discord. IP de mi server: crayzbox.xyz</p>
+<div class="btns">
+<a href="https://discord.com/users/carlos061733" class="btn btn-primary">Discord: carlos061733</a>
+<a class="btn btn-dark">IP: crayzbox.xyz</a>
+<a class="btn btn-dark">Morgan Studio</a>
+</div>
+</div>
+</section>
 
 </body>
 </html>
