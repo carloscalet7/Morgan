@@ -5,44 +5,57 @@
 <title>/morgan - Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@800&display=swap" rel="stylesheet">
 <style>
-:root{--g:#00FF66;--bg:#05140A;--card:#0A1F12;--border:rgba(0,255,102,0.12);--dim:#6B8F76}
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:radial-gradient(1000px 600px at 50% 0%, #0D2816 0%, #05140A 60%), var(--bg);color:#E6EDE7;font-family:'Inter',sans-serif}
-nav{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-between;padding:14px 28px;background:rgba(5,20,10,0.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);z-index:10}
-.logo{color:var(--g);font-family:'JetBrains Mono';font-weight:800}
+:root{--g:#00FF66;--bg:#05140A;--card:#0A1F12;--border:rgba(0,255,102,0.14);--dim:#6B8F76}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:radial-gradient(1000px 600px at 50% 0%, #0D2816 0%, #05140A 60%), var(--bg);color:#E6EDE7;font-family:'Inter',sans-serif;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:14px 28px;background:rgba(5,20,10,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);z-index:100;animation:navIn 0.8s ease}
+@keyframes navIn{from{transform:translateY(-100%)}to{transform:translateY(0)}}
+.logo{color:var(--g);font-family:'JetBrains Mono';font-weight:800;animation:glow 2.5s infinite}
+@keyframes glow{0%,100%{text-shadow:0 0 8px rgba(0,255,102,0.3)}50%{text-shadow:0 0 18px rgba(0,255,102,0.7)}}
+.links{display:flex;gap:22px}.links a{color:#6B8F76;text-decoration:none;font-size:12px;font-weight:600;position:relative;transition:0.3s}.links a:hover{color:var(--g)}.links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--g);transition:0.3s}.links a:hover::after{width:100%}
 .hero{min-height:86vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:110px 20px 50px;text-align:center}
-.avwrap{width:108px;height:108px;position:relative}.avwrap:before{content:'';position:absolute;inset:-6px;background:var(--g);filter:blur(24px);opacity:0.28;border-radius:20px}
+.avwrap{width:108px;height:108px;position:relative;animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.avwrap:before{content:'';position:absolute;inset:-6px;background:var(--g);filter:blur(24px);opacity:0.28;border-radius:20px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:0.25;transform:scale(1)}50%{opacity:0.45;transform:scale(1.08)}}
 .av{width:100%;height:100%;border-radius:18px;overflow:hidden;border:1.6px solid var(--g);box-shadow:0 0 26px rgba(0,255,102,0.25)}
-.av img{width:100%;height:100%;object-fit:cover}
-.badge{margin-top:16px;background:rgba(0,255,102,0.09);border:1px solid rgba(0,255,102,0.28);color:var(--g);padding:6px 14px;border-radius:20px;font-size:11.5px;font-weight:600}
-.pixel{font-family:'Press Start 2P';font-size:36px;margin:18px 0 12px;color:#fff}
-.sub{color:var(--dim);font-size:14px;max-width:420px}.sub b{color:var(--g)}
-.btns{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;justify-content:center}
-.btn{padding:11px 18px;border-radius:10px;font-weight:700;font-size:12.5px;text-decoration:none;cursor:pointer}
-.bg{background:var(--g);color:#001A08}.bo{background:rgba(255,255,255,0.04);border:1px solid var(--border);color:#fff}
+.av img{width:100%;height:100%;object-fit:cover;transition:0.5s}.av:hover img{transform:scale(1.08)}
+.badge{margin-top:16px;background:rgba(0,255,102,0.09);border:1px solid rgba(0,255,102,0.28);color:var(--g);padding:6px 14px;border-radius:20px;font-size:11.5px;font-weight:600;animation:fadeUp 0.7s 0.2s both}
+.pixel{font-family:'Press Start 2P';font-size:36px;margin:18px 0 12px;color:#fff;animation:fadeUp 0.7s 0.4s both}
+.sub{color:var(--dim);font-size:14px;max-width:420px;animation:fadeUp 0.7s 0.6s both}.sub b{color:var(--g)}
+.btns{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;justify-content:center;animation:fadeUp 0.7s 0.8s both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.btn{padding:11px 18px;border-radius:10px;font-weight:700;font-size:12.5px;text-decoration:none;cursor:pointer;transition:0.35s}
+.bg{background:var(--g);color:#001A08;box-shadow:0 4px 16px rgba(0,255,102,0.25)}.bg:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,255,102,0.4)}
+.bo{background:rgba(255,255,255,0.04);border:1px solid var(--border);color:#fff}.bo:hover{border-color:var(--g);color:var(--g);transform:translateY(-2px)}
 section{max-width:1160px;margin:0 auto;padding:56px 24px}
 .label{color:var(--g);font-size:10px;letter-spacing:3px;text-align:center;margin-bottom:10px;font-weight:700}
 .tit{font-size:28px;font-weight:800;text-align:center}
-.line{width:32px;height:3px;background:var(--g);margin:12px auto 40px;border-radius:10px}
+.line{width:0;height:3px;background:var(--g);margin:12px auto 40px;border-radius:10px;animation:lineGrow 1s 0.5s forwards}
+@keyframes lineGrow{to{width:32px}}
 .about-layout{display:grid;grid-template-columns:1.2fr 0.8fr;gap:32px}
 .about-text{color:var(--dim);font-size:14px;line-height:1.85}
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.tag{background:rgba(10,31,18,0.8);border:1px solid var(--border);padding:7px 12px;border-radius:20px;font-size:11.5px;color:var(--dim)}
+.tag{background:rgba(10,31,18,0.8);border:1px solid var(--border);padding:7px 12px;border-radius:20px;font-size:11.5px;color:var(--dim);transition:0.3s}.tag:hover{border-color:var(--g);color:var(--g);transform:translateY(-2px)}
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.sc{background:linear-gradient(180deg,#102616,#0A1A0F);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center}
+.sc{background:linear-gradient(180deg,#102616,#0A1A0F);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;transition:0.4s}
+.sc:hover{transform:translateY(-4px) scale(1.02);border-color:rgba(0,255,102,0.3);box-shadow:0 8px 22px rgba(0,255,102,0.12)}
 .sc .n{color:var(--g);font-family:'Press Start 2P';font-size:20px}
 .sc .l{color:#5C7D66;font-size:9px;margin-top:10px;text-transform:uppercase;letter-spacing:1px}
 .sc.big{grid-column:span 2}
 .proj{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.pc{background:rgba(10,31,18,0.6);border:1px solid var(--border);border-radius:14px;padding:18px}
+.pc{background:rgba(10,31,18,0.6);border:1px solid var(--border);border-radius:14px;padding:18px;transition:0.4s}
+.pc:hover{transform:translateY(-6px);border-color:rgba(0,255,102,0.32);box-shadow:0 12px 28px rgba(0,255,102,0.12)}
 .pc small{color:var(--g);font-size:8.5px;font-weight:700;letter-spacing:0.8px}
 .pc p{color:var(--dim);font-size:11px;line-height:1.6;margin-top:8px;min-height:44px}
 .stat5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-@media(max-width:900px){.about-layout,.proj,.stat5{grid-template-columns:1fr}.pixel{font-size:24px}}
+.reveal{opacity:0;transform:translateY(24px);transition:0.7s cubic-bezier(0.2,0.8,0.2,1)}.reveal.active{opacity:1;transform:translateY(0)}
+footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;background:rgba(5,20,10,0.6);animation:fadeUp 1s both}
+@media(max-width:900px){.about-layout,.proj,.stat5{grid-template-columns:1fr}.links{display:none}.pixel{font-size:24px}}
 </style>
 </head>
 <body>
-<nav><div class="logo">/morgan</div><div style="color:#5C7D66;font-size:12px">Sobre mí • Proyectos • Estudio • Contacto</div></nav>
+<nav><div class="logo">/morgan</div><div class="links"><a href="#sobre-mi">Sobre mí</a><a href="#proyectos">Proyectos</a><a href="#estudio">Estudio</a><a href="#contacto">Contacto</a></div></nav>
 
 <!-- 1 PERFIL -->
 <div class="hero">
@@ -50,11 +63,11 @@ section{max-width:1160px;margin:0 auto;padding:56px 24px}
 <div class="badge">🇲🇽 México</div>
 <div class="pixel">Morgan</div>
 <p class="sub">Configurador & Desarrollador de servidores <b>Minecraft</b> y <b>Discord</b></p>
-<div class="btns"><a class="btn bg" href="#proyectos">Ver proyectos</a><a class="btn bo" href="#contacto">Contrátame</a></div>
+<div class="btns"><a class="btn bg" href="#proyectos">Ver proyectos</a><a class="btn bo" href="https://discord.gg/6tqFJQcZ7" target="_blank">Contrátame</a></div>
 </div>
 
 <!-- 2 QUIEN SOY -->
-<section>
+<section id="sobre-mi" class="reveal">
 <div class="label">SOBRE MÍ</div><div class="tit">Quién soy</div><div class="line"></div>
 <div class="about-layout">
 <div>
@@ -72,7 +85,7 @@ section{max-width:1160px;margin:0 auto;padding:56px 24px}
 </section>
 
 <!-- 3 MI EXPERIENCIA -->
-<section id="proyectos">
+<section id="proyectos" class="reveal">
 <div class="label">PROYECTOS</div><div class="tit">Mi experiencia</div><div class="line"></div>
 <div class="proj">
 <div class="pc"><div style="font-size:16px">👑</div><h3>BockieMC</h3><small>DEV OFICIAL</small><p>Dev oficial de BockieMC. Desarrollo de plugins custom y optimización.</p></div>
@@ -82,10 +95,10 @@ section{max-width:1160px;margin:0 auto;padding:56px 24px}
 </section>
 
 <!-- 4 MI ESTUDIO + NUMEROS -->
-<section><div class="label">MI ESTUDIO</div><div class="tit"><span style="color:#fff">Morgan</span> <span style="color:var(--g)">Studio</span></div>
+<section id="estudio" class="reveal"><div class="label">MI ESTUDIO</div><div class="tit"><span style="color:#fff">Morgan</span> <span style="color:var(--g)">Studio</span></div>
 <p style="color:var(--dim);font-size:12px;text-align:center;max-width:520px;margin:10px auto 0;line-height:1.6">Morgan Studio es mi estudio, donde ofrezco servicios de configuración, desarrollo y diseño para servidores de Minecraft y comunidades de Discord – de principio a fin.</p></section>
 
-<section id="estudio" style="padding-top:0">
+<section class="reveal" style="padding-top:0">
 <div class="label">ESTADÍSTICAS</div><div class="tit">Números que hablan</div><div class="line"></div>
 <div class="stat5">
 <div class="sc"><div style="font-size:18px">🕐</div><div class="n">7</div><div class="l">Meses de experiencia</div></div>
@@ -95,13 +108,28 @@ section{max-width:1160px;margin:0 auto;padding:56px 24px}
 <div class="sc"><div style="font-size:18px">✅</div><div class="n">100%</div><div class="l">Compromiso</div></div>
 </div>
 <div class="tags" style="justify-content:center;margin-top:22px"><div class="tag">⚙️ Configuración de servidores</div><div class="tag">🔧 Desarrollo de plugins</div><div class="tag">🎨 Diseño gráfico</div><div class="tag">💬 Servidores de Discord</div><div class="tag">🛡️ Gestión de staff</div></div>
-<div style="text-align:center;margin-top:20px"><a class="btn bg" href="https://discord.com/users/carlos061733" target="_blank">💬 Discord de Morgan Studio</a></div>
+<div style="text-align:center;margin-top:20px"><a class="btn bg" href="https://discord.gg/6tqFJQcZ7" target="_blank">💬 Discord de Morgan Studio</a></div>
+
 <div id="contacto" style="margin-top:40px;background:rgba(10,31,18,0.5);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center">
 <div style="font-weight:700;font-size:18px">¿Buscás un configurador?</div>
-<p style="color:var(--dim);font-size:12px;max-width:400px;margin:8px auto">Estoy disponible para proyectos de Minecraft y Discord. Si necesitas a alguien con experiencia para tu servidor, contactame.</p>
-<div class="btns" style="justify-content:center"><a class="btn bg" href="https://discord.com/users/carlos061733" target="_blank">Discord</a><a class="btn bo">Instagram</a><a class="btn bo">TikTok</a><a class="btn bo">PayPal</a></div>
+<p style="color:var(--dim);font-size:12px;max-width:400px;margin:8px auto">Estoy disponible para proyectos de Minecraft y Discord. Contactame directo.</p>
+<div class="btns" style="justify-content:center"><a class="btn bg" href="https://discord.gg/6tqFJQcZ7" target="_blank">Discord</a><a class="btn bo" href="https://tiktok.com/@morganstudio0" target="_blank">TikTok</a></div>
 </div>
-<p style="text-align:center;color:#2A4A32;font-size:9px;margin-top:28px">Morgan • Made by Morgan • 2026</p>
 </section>
+
+<footer>
+<div style="color:var(--g);font-family:'JetBrains Mono';font-weight:800">/morgan</div>
+<p style="color:var(--dim);font-size:11px;margin-top:8px">Configurador & Desarrollador desde 🇲🇽 México</p>
+<div style="display:flex;gap:14px;justify-content:center;margin-top:12px">
+<a href="https://discord.gg/6tqFJQcZ7" target="_blank" style="color:#6B8F76;font-size:11px;text-decoration:none">Discord</a>
+<a href="https://tiktok.com/@morganstudio0" target="_blank" style="color:#6B8F76;font-size:11px;text-decoration:none">TikTok</a>
+</div>
+<p style="color:#2A4A32;font-size:9px;margin-top:16px;letter-spacing:1px">MORGAN • MADE BY MORGAN • 2026</p>
+</footer>
+
+<script>
+const obs=new IntersectionObserver((ents)=>{ents.forEach(e=>{if(e.isIntersecting)e.target.classList.add('active')})},{threshold:0.15});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>
