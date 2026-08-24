@@ -5,77 +5,107 @@
 <title>IAIMBXT_ — Coordinador Minecraft</title>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}:root{--bg:#070A14;--card:#11172c;--accent:#7c5cff;--cyan:#4de2ff;--muted:#8c92b8}
-body{background:var(--bg);color:#fff;font-family:'JetBrains Mono',monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#070A14;--card:#10172c;--accent:#7c5cff;--cyan:#4de2ff;--muted:#8c92b8}
+body{background:var(--bg);color:#fff;font-family:'JetBrains Mono',monospace;overflow-x:hidden}
 #stars{position:fixed;inset:0;z-index:0}
-nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;padding:16px 6%;background:rgba(7,10,20,0.8);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.06);font-size:10px}
-nav a{color:var(--muted);text-decoration:none;margin-left:16px}nav a:hover{color:#fff}
-.hero{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr 0.8fr;max-width:1050px;margin:0 auto;padding:130px 6% 60px;gap:30px;align-items:center}
-.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(124,92,255,0.4);background:rgba(124,92,255,0.12);color:#a89bff;padding:7px 14px;border-radius:999px;font-size:9px}
-.dot{width:7px;height:7px;background:#3cff8a;border-radius:50%;box-shadow:0 0 8px #3cff8a;animation:pulse 1.5s infinite}@keyframes pulse{50%{opacity:.5}}
-.hero h1{font-family:'Syne';font-size:48px;line-height:.9;margin:16px 0}.hero h1 span{color:var(--cyan);text-shadow:0 0 18px rgba(77,226,255,0.7);display:block;font-size:38px}
-.hero p{font-size:11px;color:var(--muted);line-height:1.8;max-width:500px}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.chip{font-size:9px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08)}.chip.p{background:var(--accent)}
-.btns{display:flex;gap:10px;margin-top:18px}.btn{padding:11px 18px;border-radius:10px;font-size:10px;font-weight:700;text-decoration:none;transition:.2s}
-.btn1{background:var(--cyan);color:#000;box-shadow:0 0 20px rgba(77,226,255,0.4)}.btn2{background:rgba(255,255,255,0.07);color:#fff;border:1px solid rgba(255,255,255,0.12)}.btn:hover{transform:translateY(-2px)}
-.img-wrap{position:relative;display:grid;place-items:center;animation:float 4s ease-in-out infinite}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-.glow{position:absolute;width:300px;height:300px;background:radial-gradient(circle, rgba(124,92,255,0.45), transparent 70%);filter:blur(20px)}
-.avatar{width:240px;height:240px;border-radius:22px;object-fit:cover;border:2px solid rgba(124,92,255,0.4);z-index:1;box-shadow:0 0 40px rgba(124,92,255,0.3)}
-section{position:relative;z-index:2;max-width:1050px;margin:0 auto;padding:60px 6%}.label{font-size:9px;letter-spacing:3px;color:var(--muted);opacity:.6;margin-bottom:16px}
-h2{font-family:'Syne';font-size:26px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
-.card{background:var(--card);border:1px solid rgba(255,255,255,0.07);border-radius:16px;overflow:hidden;transition:.3s}.card:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:0 15px 40px rgba(0,0,0,0.5)}
-.card img{width:100%;height:140px;object-fit:cover}.body{padding:14px}.body small{font-size:8px;color:var(--accent);font-weight:700}.body h4{font-size:13px;margin:6px 0}.body p{font-size:10px;color:var(--muted);line-height:1.6}
-.about{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}.box{background:var(--card);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:18px}.box h4{font-size:11px;color:var(--cyan);margin-bottom:12px}.box li{font-size:10px;color:var(--muted);padding:5px 0;list-style:none;display:flex;gap:6px}
-.contact{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.cbtn{padding:12px 20px;border-radius:12px;background:var(--card);border:1px solid rgba(255,255,255,0.08);color:#fff;text-decoration:none;font-size:11px;transition:.2s}.cbtn:hover{border-color:var(--cyan);transform:translateY(-2px)}
-@media(max-width:800px){.hero{grid-template-columns:1fr;text-align:center}.hero p{margin:0 auto}.grid3,.about{grid-template-columns:1fr}.img-wrap{order:-1}}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;padding:16px 6%;background:rgba(7,10,20,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);font-size:10px;letter-spacing:1px}
+nav a{color:var(--muted);text-decoration:none;margin-left:18px;transition:.2s}nav a:hover{color:#fff}
+.reveal{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(.2,.8,.2,1)}.reveal.active{opacity:1;transform:translateY(0)}
+.hero{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr 0.85fr;max-width:1100px;margin:0 auto;padding:140px 6% 80px;gap:40px;align-items:center}
+.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(124,92,255,0.4);background:rgba(124,92,255,0.12);color:#a89bff;padding:8px 16px;border-radius:999px;font-size:9px;letter-spacing:1px}
+.dot{width:7px;height:7px;background:#3cff8a;border-radius:50%;box-shadow:0 0 10px #3cff8a;animation:pulse 1.4s infinite}@keyframes pulse{50%{opacity:.4}}
+.hero h1{font-family:'Syne';font-size:52px;line-height:.9;margin:18px 0 10px}.hero h1 span{color:var(--cyan);text-shadow:0 0 20px rgba(77,226,255,0.8);display:block;font-size:40px;letter-spacing:1px}
+.hero p{font-size:11px;color:var(--muted);line-height:1.9;max-width:520px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.chip{font-size:9px;padding:7px 13px;border-radius:999px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08)}.chip.p{background:var(--accent);color:#fff;box-shadow:0 0 15px rgba(124,92,255,0.4)}
+.btns{display:flex;gap:10px;margin-top:22px}.btn{padding:12px 20px;border-radius:12px;font-size:10px;font-weight:800;text-decoration:none;transition:.25s}
+.btn1{background:var(--cyan);color:#000;box-shadow:0 0 25px rgba(77,226,255,0.4)}.btn2{background:rgba(255,255,255,0.07);color:#fff;border:1px solid rgba(255,255,255,0.12)}.btn:hover{transform:translateY(-3px) scale(1.02)}
+.img-wrap{position:relative;display:grid;place-items:center;animation:float 5s ease-in-out infinite}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.glow{position:absolute;width:340px;height:340px;background:radial-gradient(circle, rgba(124,92,255,0.5), rgba(77,226,255,0.2), transparent 70%);filter:blur(22px)}
+.avatar{width:260px;height:260px;border-radius:24px;object-fit:cover;border:2px solid rgba(124,92,255,0.5);z-index:1;box-shadow:0 0 50px rgba(124,92,255,0.35), 0 0 0 1px rgba(255,255,255,0.05) inset}
+section{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:70px 6%}.label{font-size:9px;letter-spacing:4px;color:var(--muted);opacity:.5;margin-bottom:14px}
+h2{font-family:'Syne';font-size:30px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.box{background:linear-gradient(180deg, rgba(20,28,60,0.9), rgba(16,23,44,0.9));border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:22px;backdrop-filter:blur(10px);transition:.3s}.box:hover{border-color:rgba(124,92,255,0.3);transform:translateY(-3px)}
+.box h4{font-size:11px;color:var(--cyan);margin-bottom:14px;letter-spacing:1px}.box li{font-size:10px;color:var(--muted);padding:6px 0;list-style:none;display:flex;gap:8px;line-height:1.6}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.card{background:var(--card);border:1px solid rgba(255,255,255,0.07);border-radius:18px;overflow:hidden;transition:.35s cubic-bezier(.2,.8,.2,1)}.card:hover{transform:translateY(-8px) scale(1.01);border-color:var(--accent);box-shadow:0 20px 50px rgba(0,0,0,0.6)}
+.card img{width:100%;height:160px;object-fit:cover}.body{padding:16px}.body small{font-size:8px;color:var(--accent);font-weight:800;letter-spacing:1px}.body h4{font-size:13px;margin:8px 0}.body p{font-size:10px;color:var(--muted);line-height:1.7}
+.contact{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.cbtn{display:flex;align-items:center;gap:12px;padding:16px 18px;border-radius:14px;background:var(--card);border:1px solid rgba(255,255,255,0.07);color:#fff;text-decoration:none;font-size:11px;transition:.3s;cursor:pointer}
+.cbtn img{width:22px;height:22px}.cbtn:hover{border-color:var(--cyan);transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,0.4)}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#fff;color:#000;padding:10px 18px;border-radius:999px;font-size:11px;font-weight:700;opacity:0;pointer-events:none;transition:.3s;z-index:100}.toast.show{opacity:1;transform:translateX(-50%) translateY(-10px)}
+@media(max-width:900px){.hero{grid-template-columns:1fr;text-align:center}.hero p{margin:0 auto}.about-grid,.grid3,.contact{grid-template-columns:1fr}.img-wrap{order:-1}.avatar{width:200px;height:200px}}
 </style>
 </head>
 <body>
 <canvas id="stars"></canvas>
-<nav><div style="font-weight:800">𝙄𝘼𝙄𝙈𝘽𝙓𝙏_</div><div><a href="#inicio">INICIO</a><a href="#sobre">SOBRE MÍ</a><a href="#proyectos">PROYECTOS</a><a href="#contacto">CONTACTO</a></div></nav>
+<nav><div style="font-weight:800;letter-spacing:1px">𝙄𝘼𝙄𝙈𝘽𝙓𝙏_</div><div><a href="#inicio">INICIO</a><a href="#sobre">SOBRE MÍ</a><a href="#proyectos">PROYECTOS</a><a href="#contacto">CONTACTO</a></div></nav>
 
 <div class="hero" id="inicio">
-<div>
-<div class="badge"><div class="dot"></div> DISPONIBLE • COORDINADOR</div>
+<div class="reveal">
+<div class="badge"><div class="dot"></div> DISPONIBLE • COORDINADOR SERIAL</div>
 <h1>𝙄𝘼𝙄𝙈𝘽𝙓𝙏 <span>COORDINADOR</span></h1>
-<p>Coordinador de Minecraft Java & Discord con 2+ meses de experiencia. Me encargo de que un servidor funcione como comunidad, no solo como juego. Organización, staff y ambiente sano.</p>
-<div class="chips"><div class="chip p">COORDINADOR</div><div class="chip">STAFF MANAGER</div><div class="chip">MODERACIÓN</div><div class="chip">GESTIÓN DE COMUNIDADES</div></div>
-<div class="btns"><a class="btn btn1" href="#proyectos">VER PROYECTOS →</a><a class="btn btn2" href="#contacto">CONTACTAME</a></div>
+<p>Soy coordinador serial de Minecraft Java & Discord. No soy dev, no soy builder — soy el que pone orden. Con 2+ meses he aprendido que un servidor no muere por falta de plugins, muere por falta de liderazgo.</p>
+<div class="chips"><div class="chip p">COORDINADOR SERIAL</div><div class="chip">STAFF LEAD</div><div class="chip">COMUNIDADES</div><div class="chip">ANTI-TOXIC</div></div>
+<div class="btns"><a class="btn btn1" href="#proyectos">VER PROYECTOS →</a><a class="btn btn2" href="#sobre">SOBRE MÍ</a></div>
 </div>
-<div class="img-wrap"><div class="glow"></div><img class="avatar" src="https://cdn.discordapp.com/attachments/1538817358716731404/1540985840652787762/IMG-20260823-WA8499.jpg?ex=6a8c9b26&is=6a8b49a6&hm=d289f29c964d5a61c02b0c1afcb99afc24b8a7dfb3be7348389545644b33dedd" alt="IAIMBXT"></div>
+<div class="img-wrap reveal"><div class="glow"></div><img class="avatar" src="https://cdn.discordapp.com/attachments/1538817358716731404/1541279682106753065/ee243e3e468599e8e1e764b2596a2694.jpg?ex=6a8d040f&is=6a8bb28f&hm=ac488c6da9a46c0eb5313fdc53a23e12cebc3f8bba08cc441ee21cf9c24f57c6" alt="IAIMBXT"></div>
 </div>
 
-<section id="sobre"><div class="label">01 / SOBRE MÍ</div><h2>Que se hacer como Coordinador</h2>
-<div class="about">
-<div class="box"><h4>🛡️ COORDINACIÓN REAL</h4>
-<li>✅ Reclutamiento y formación de Staff desde cero</li><li>✅ Creación de reglamentos, guías y sistema de sanciones justo</li><li>✅ Resolución de peleas, robos y toxicidad sin favoritismos</li><li>✅ Organización de horarios de staff y supervisión 24/7</li><li>✅ Eventos semanales para mantener la comunidad activa</li><li>✅ Filtro de usuarios tóxicos — comunidad 0% tóxica</li></div>
-<div class="box"><h4>⚙️ LO QUE DOMINO</h4>
-<li>🔹 LuckPerms (rangos y permisos), EssentialsX, CoreProtect</li><li>🔹 GriefPrevention, WorldGuard, TAB, DiscordSRV</li><li>🔹 Moderación total en Discord: Tickets, AutoMod, Logs, Roles</li><li>🔹 Configuración básica de plugins sin romper el server</li><li>🔹 Liderazgo, paciencia y trabajo bajo presión</li><li>🔹 2+ meses liderando equipos de +10 staffs y 100+ usuarios</li></div>
+<section id="sobre"><div class="label reveal">01 / SOBRE MÍ</div><h2 class="reveal">Más que staff, soy el que sostiene el servidor</h2>
+<div class="about-grid">
+<div class="box reveal"><h4>🧠 MI FILOSOFÍA DE COORDINADOR</h4>
+<li>💎 <b>Un servidor no necesita más rangos, necesita orden.</b> Yo creo el orden.</li>
+<li>⚖️ <b>Reglas justas, no abusivas.</b> Sanciones con pruebas, apelaciones reales, cero favoritismos.</li>
+<li>👥 <b>Staff que sirve, no que manda.</b> Enseño a mi equipo a ayudar, no a presumir rango.</li>
+<li>🔥 <b>Ambiente sano > Números.</b> Prefiero 50 usuarios activos y felices que 500 tóxicos.</li>
+<li>📈 <b>Crecimiento orgánico.</b> Eventos, dinámicas y activación diaria para que nadie se aburra.</li>
+<li>🛡️ <b>Protección total.</b> Anti-grief, anti-robo, anti-dupeo con logs y revisión diaria.</li>
+</div>
+<div class="box reveal"><h4>⚡ LO QUE HAGO DÍA A DÍA</h4>
+<li>📌 Organizo todo el staff: horarios, reportes, tareas y supervisión</li>
+<li>📌 Reviso tickets, apelaciones y conflictos entre usuarios</li>
+<li>📌 Filtro gente tóxica y mantengo el chat limpio y divertido</li>
+<li>📌 Creo y actualizo guías, reglamentos y anuncios claros</li>
+<li>📌 Configuro Discord con sistema pro: verificación, tickets, logs, roles, AutoMod</li>
+<li>📌 Doy estabilidad: si algo se rompe, lo arreglo y comunico sin pánico</li>
+<li>📌 Soy serial: he sido Owner y Manager, sé lo que duele perder una comunidad y por eso la cuido</li>
+</div>
 </div>
 </section>
 
-<section id="proyectos"><div class="label">02 / MIS PROYECTOS</div><h2>Trayectoria</h2>
+<section id="proyectos"><div class="label reveal">02 / PROYECTOS</div><h2 class="reveal">Donde he sido coordinador</h2>
 <div class="grid3">
-<div class="card"><img src="https://cdn.discordapp.com/attachments/1538817358716731404/1540985840652787762/IMG-20260823-WA8499.jpg?ex=6a8c9b26&is=6a8b49a6&hm=d289f29c964d5a61c02b0c1afcb99afc24b8a7dfb3be7348389545644b33dedd"><div class="body"><small>OWNER & COORDINADOR • ACTUAL</small><h4>ThorianMC</h4><p>Mi proyecto principal. Soy Owner y Coordinador general. Survival 1.20.1. Me encargo de toda la gestión de staff, normas, tickets y crecimiento.</p></div></div>
-<div class="card"><img src="https://cdn.discordapp.com/attachments/1538817358716731404/1541277844187914352/IMG-20260818-WA0149.jpg?ex=6a8d0259&is=6a8bb0d9&hm=218147851ddaa1492306e261f92c37985960884ecb8393a2b220feba87b032b"><div class="body"><small>EX DUEÑO & MANAGER</small><h4>NoxAnamires</h4><p>Ex Dueño y Manager. Implementé sistema de moderación, reclutamiento y organización. Llevé la comunidad de 0 a activa y ordenada.</p></div></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1600861194802-a2b11076bc51?q=80&w=500"><div class="body"><small>EX DUEÑO</small><h4>MineKravex</h4><p>Ex Dueño. Gestión completa de servidor Minecraft Java y Discord. Encargado de staff, eventos, soporte y seguridad anti-grief.</p></div></div>
+<div class="card reveal"><img src="https://cdn.discordapp.com/attachments/1538817358716731404/1540985840652787762/IMG-20260823-WA8499.jpg?ex=6a8c9b26&is=6a8b49a6&hm=d289f29c964d5a61c02b0c1afcb99afc24b8a7dfb3be7348389545644b33dedd"><div class="body"><small>OWNER & COORDINADOR • ACTUAL</small><h4>ThorianMC</h4><p>Mi proyecto principal. Owner y coordinador. Survival 1.20.1 Olimpo. Gestión total de staff, normas y comunidad.</p></div></div>
+<div class="card reveal"><img src="https://cdn.discordapp.com/attachments/1538817358716731404/1541277844187914352/IMG-20260818-WA0149.jpg?ex=6a8d0259&is=6a8bb0d9&hm=218147851ddaa1492306e261f92c37985960884ecb8393a2b220feba87b032b0"><div class="body"><small>EX DUEÑO & MANAGER</small><h4>NoxAnamires</h4><p>Ex Dueño y Manager. Puse orden total, sistema de staff y crecimiento activo. Aprendí a liderar bajo presión.</p></div></div>
+<div class="card reveal"><img src="https://cdn.discordapp.com/attachments/1538817358716731404/1541277844187914352/IMG-20260818-WA0149.jpg?ex=6a8d0259&is=6a8bb0d9&hm=218147851ddaa1492306e261f92c37985960884ecb8393a2b220feba87b032b0"><div class="body"><small>EX DUEÑO</small><h4>MineKravex</h4><p>Ex Dueño. Encargado de toda la gestión de Minecraft y Discord. Eventos, soporte, seguridad y activación de comunidad.</p></div></div>
 </div>
 </section>
 
-<section id="contacto"><div class="label">03 / CONTACTO</div><h2>¿Buscas Coordinador?</h2>
-<p style="font-size:11px;color:var(--muted);max-width:520px;margin-top:8px;line-height:1.7">Si necesitas alguien que ponga orden, organice tu staff y mantenga tu comunidad activa y sin toxicidad, escríbeme. Estoy disponible para nuevos proyectos.</p>
-<div class="contact">
-<a class="cbtn" href="https://discord.com" target="_blank">💬 Discord: iaimbxt.</a>
-<a class="cbtn" href="https://tiktok.com/@morganstudio0" target="_blank">🎵 TikTok: @morganstudio0</a>
-<a class="cbtn" href="mailto:iaimbxt.contact@gmail.com">📧 Contactar por Email</a>
+<section id="contacto"><div class="label reveal">03 / CONTÁCTAME</div><h2 class="reveal">¿Necesitas un coordinador serio?</h2><p class="reveal" style="font-size:11px;color:#8c92b8;max-width:560px;margin-top:10px;line-height:1.8">No busques un dev si lo que necesitas es orden. Si tu staff está desorganizado, tu chat es tóxico o tu comunidad se está muriendo, habla conmigo.</p>
+<div class="contact reveal">
+<div class="cbtn" onclick="copyDC()"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png"><div><div style="font-weight:800">Discord</div><div style="font-size:9px;color:var(--muted)">iaimbxt. — click para copiar</div></div></div>
+<a class="cbtn" href="https://tiktok.com/@morganstudio0" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png"><div><div style="font-weight:800">TikTok</div><div style="font-size:9px;color:var(--muted)">@morganstudio0</div></div></a>
+<a class="cbtn" href="mailto:iaimbxtcontacted@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"><div><div style="font-weight:800">Gmail</div><div style="font-size:9px;color:var(--muted)">iaimbxtcontacted@gmail.com</div></div></a>
 </div>
-<div style="margin-top:60px;text-align:center;font-size:9px;color:var(--muted);opacity:.5;letter-spacing:2px">© 2026 IAIMBXT_ — COORDINADOR DE MINECRAFT JAVA & DISCORD • 2+ MESES DE EXPERIENCIA • MÉXICO</div>
+<div style="margin-top:70px;text-align:center;font-size:9px;color:var(--muted);opacity:.4;letter-spacing:2px" class="reveal">© 2026 IAIMBXT_ — COORDINADOR SERIAL • 2+ MESES • MÉXICO</div>
 </section>
+
+<div class="toast" id="toast">✅ Usuario copiado: iaimbxt.</div>
 
 <script>
+// estrellas
 const c=document.getElementById('stars'),x=c.getContext('2d');function rs(){c.width=innerWidth;c.height=innerHeight}rs();
-let s=[...Array(150)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*1.2+0.2,o:Math.random()*0.5}));
-function dr(){x.clearRect(0,0,c.width,c.height);s.forEach(p=>{x.beginPath();x.arc(p.x,p.y,p.r,0,6.28);x.fillStyle=`rgba(255,255,255,${p.o})`;x.fill();p.y+=0.2;if(p.y>c.height){p.y=0;p.x=Math.random()*c.width}});requestAnimationFrame(dr)}dr();window.onresize=rs;
+let s=[...Array(180)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*1.3+0.2,o:Math.random()*0.6}));
+function dr(){x.clearRect(0,0,c.width,c.height);s.forEach(p=>{x.beginPath();x.arc(p.x,p.y,p.r,0,6.28);x.fillStyle=`rgba(255,255,255,${p.o})`;x.fill();p.y+=0.15;if(p.y>c.height){p.y=0;p.x=Math.random()*c.width}});requestAnimationFrame(dr)}dr();window.onresize=rs;
+
+// scroll animation deslizamiento
+const obs=new IntersectionObserver((e)=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('active')})},{threshold:0.15});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// copiar dc
+function copyDC(){navigator.clipboard.writeText('iaimbxt.');const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000)}
 </script>
 </body>
 </html>
