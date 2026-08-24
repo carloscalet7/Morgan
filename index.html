@@ -1,70 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MORGAN_ — Staff Manager & Developer</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@800&family=Sora:wght@400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IAIMBXT | Coordinador Minecraft & Discord</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-*{cursor:default} body{background:#050a18;color:#fff;font-family:Sora;overflow-x:hidden}
-.pixel{font-family:'JetBrains Mono'}
-#space{position:fixed;inset:0;z-index:-3}
-#mouse-light{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(600px circle at var(--x) var(--y), rgba(79,195,247,.12), transparent 40%)}
-.card{background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:22px;transition:all.5s cubic-bezier(.2,.8,.2,1)}
-.card:hover{transform:translateY(-8px) scale(1.02);border-color:rgba(79,195,247,.5);box-shadow:0 0 30px rgba(79,195,247,.25),0 20px 60px rgba(0,0,0,.5)}
-.pixel-glow{color:#4fc3f7;text-shadow:0 0 15px rgba(79,195,247,.9),0 0 50px rgba(79,195,247,.5)}
-.tag{font-family:'JetBrains Mono';font-size:10px;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
-.tag-active{background:rgba(124,58,237,.4);border-color:#a855f7;color:#a5f3fc;box-shadow:0 0 15px rgba(168,85,247,.4)}
-.reveal{opacity:0;transform:translateY(30px);transition:1s}
-.reveal.active{opacity:1;transform:translateY(0)}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+:root{--bg:#0a0c14;--card:#151a2c;--card2:#1c223a;--accent:#6d5cff;--accent2:#00d2ff;--text:#e6e8ff;--muted:#8b90b8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;overflow-x:hidden}
+.bg-glow{position:fixed;width:800px;height:800px;background:radial-gradient(circle at center, rgba(109,92,255,0.25), transparent 70%);top:-200px;left:-200px;pointer-events:none}
+.bg-glow2{position:fixed;width:600px;height:600px;background:radial-gradient(circle at center, rgba(0,210,255,0.2), transparent 70%);bottom:-100px;right:-100px;pointer-events:none}
+nav{display:flex;justify-content:space-between;align-items:center;padding:24px 8%;position:relative;z-index:2}
+.logo{font-weight:700;font-size:20px;letter-spacing:1px}.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:28px;font-size:14px;color:var(--muted)}.nav-links a{color:var(--muted);text-decoration:none}.nav-links a.active{color:var(--text);border-bottom:2px solid var(--accent);padding-bottom:4px}
+.container{max-width:900px;margin:0 auto;padding:20px;position:relative;z-index:2}
+.hero{background:linear-gradient(135deg, var(--card) 0%, #1a2040 100%);border:1px solid rgba(109,92,255,0.2);border-radius:20px;padding:36px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg, transparent, var(--accent), transparent)}
+.badge{display:inline-block;background:rgba(109,92,255,0.15);border:1px solid rgba(109,92,255,0.3);color:var(--accent);padding:6px 12px;border-radius:20px;font-size:11px;font-family:'JetBrains Mono';letter-spacing:1px;margin-bottom:16px}
+.hero h1{font-size:32px;line-height:1.1;margin-bottom:12px}.hero h1 span{color:var(--accent);background:linear-gradient(90deg, var(--accent), var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:var(--muted);font-size:14px;line-height:1.6;max-width:600px}
+.btn{margin-top:20px;display:inline-block;background:linear-gradient(90deg, var(--accent), #8b7cff);color:white;padding:10px 22px;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px;box-shadow:0 8px 20px rgba(109,92,255,0.3)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}
+.stat{background:var(--card);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:18px;text-align:center}
+.stat h3{color:var(--accent2);font-size:20px}.stat p{font-size:10px;color:var(--muted);font-family:'JetBrains Mono';margin-top:4px;text-transform:uppercase}
+.about{background:var(--card);border-radius:16px;padding:22px;display:flex;gap:16px;border:1px solid rgba(255,255,255,0.06);margin-bottom:20px}
+.about h3{font-size:16px;margin-bottom:6px}.about p{color:var(--muted);font-size:13px;line-height:1.6}
+.quote{text-align:center;padding:20px;color:var(--muted);font-style:italic;font-size:13px;border:1px dashed rgba(255,255,255,0.08);border-radius:12px;margin-bottom:28px;background:rgba(255,255,255,0.02)}
+.section-title{font-size:20px;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.section-title::after{content:'';height:1px;flex:1;background:linear-gradient(90deg, rgba(109,92,255,0.3), transparent)}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.p-card{background:var(--card);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:16px;transition:.2s}
+.p-card:hover{transform:translateY(-4px);border-color:rgba(109,92,255,0.4);background:var(--card2)}
+.p-card .tag{font-size:9px;font-family:'JetBrains Mono';color:var(--accent);background:rgba(109,92,255,0.12);padding:4px 8px;border-radius:6px}
+.p-card h4{margin:10px 0 6px;font-size:14px}.p-card p{font-size:11px;color:var(--muted);line-height:1.5}
+.p-btn{margin-top:12px;display:inline-block;font-size:10px;background:rgba(255,255,255,0.06);padding:6px 12px;border-radius:8px;color:var(--text);text-decoration:none}
+.skills{margin-top:30px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.skill-box{background:var(--card);padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.bar{height:6px;background:rgba(255,255,255,0.08);border-radius:10px;overflow:hidden;margin:8px 0}
+.fill{height:100%;background:linear-gradient(90deg, var(--accent), var(--accent2))}
+@media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}.projects{grid-template-columns:1fr}.skills{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<canvas id="space"></canvas>
-<div id="mouse-light" style="--x:50%;--y:50%"></div>
-
-<header class="flex justify-between items-center px-6 md:px-20 py-3 bg-[#080e1f]/70 backdrop-blur-2xl border-b border-white/5 sticky top-0 z-50">
-<div class="flex items-center gap-3"><img src="https://cdn.discordapp.com/attachments/1513772002534494390/1533402693010460742/SaveTikTok.to_7554828542089973022_8.jpg?ex=6a74f94b&is=6a73a7cb&hm=1111f4e019097cee7380c0750fbadbe8971f5b61312aa2b499f222d45f5f1a2c&" class="w-8 h-8 rounded-lg border border-cyan-400/30 object-cover"><span class="pixel font-black tracking-widest">MORGAN_</span></div>
-<nav class="pixel text-[10px] tracking-[2px] text-white/60 flex gap-6"><a href="#presentacion">INICIO</a><a href="#sobre">SOBRE MÍ</a><a href="#proyectos">TRAYECTORIA</a><a href="#studio">STUDIO</a><a href="#contacto">CONTACTO</a></nav>
-</header>
-
-<section id="presentacion" class="text-center px-6 pt-24 pb-28 max-w-5xl mx-auto reveal">
-<div class="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-[#1a1030]/80 border border-violet-500/40 pixel text-[10px] text-cyan-300" style="box-shadow:0 0 20px rgba(168,85,247,.3)"><span class="w-2 h-2 bg-green-400 rounded-full animate-pulse shadow-[0_0_10px_#22c55e]"></span> DISPONIBLE PARA NUEVOS PROYECTOS</div>
-<p class="pixel text-[9px] tracking-[5px] text-white/30 mt-10">PORTFOLIO PROFESIONAL</p>
-<p class="pixel text-white/50 mt-6">HOLA, SOY</p>
-<h1 class="pixel text-6xl md:text-[90px] font-black leading-none mt-2">MORGAN</h1>
-<h2 class="pixel text-3xl md:text-[52px] font-black pixel-glow mt-2 leading-[0.9]">STAFF MANAGER &<br>DEVELOPER</h2>
-<p class="pixel text-[11px] leading-6 text-white/40 max-w-2xl mx-auto mt-10">MÁS DE 7 MESES DE EXPERIENCIA EN MODERACIÓN Y GESTIÓN DE COMUNIDADES MINECRAFT. ESPECIALISTA EN LIDERAZGO DE EQUIPOS, ORGANIZACIÓN DE STAFF Y MANTENIMIENTO DE SERVIDORES ESTABLES. 🇲🇽 MÉXICO</p>
-<div class="flex justify-center gap-2 flex-wrap mt-8"><span class="tag tag-active">STAFF MANAGER</span><span class="tag tag-active">MEDIA MANAGER</span><span class="tag">GESTIÓN DE EQUIPOS</span><span class="tag">MODERACIÓN</span><span class="tag">DEVELOPER DISCORD</span></div>
-<div class="flex justify-center gap-3 mt-8 pixel"><a href="#proyectos" class="bg-[#4fc3f7] text-black px-7 py-3 rounded-xl text-[11px] font-bold hover:shadow-[0_0_30px_#4fc3f7] transition">VER TRAYECTORIA →</a><a href="#contacto" class="bg-white/5 border border-white/10 px-7 py-3 rounded-xl text-[11px] backdrop-blur">CONTACTAR</a></div>
-</section>
-
-<section id="sobre" class="px-6 md:px-20 py-16 max-w-6xl mx-auto reveal"><h2 class="pixel text-xs tracking-widest text-white/40">02 / SOBRE MÍ</h2><div class="card p-8 mt-6"><p class="text-sm text-white/60 leading-relaxed">Soy Morgan de México, Manager con más de 7 meses moderando. No solo baneo, creo sistemas de tickets, jerarquías y staff activo. Mi trabajo es profesional y sin drama.</p></div></section>
-
-<section id="proyectos" class="px-6 md:px-20 py-16 max-w-6xl mx-auto reveal">
-<h2 class="pixel text-sm tracking-[4px]">MIS PROYECTOS</h2>
-<div class="grid md:grid-cols-2 gap-6 mt-8">
-<div class="card overflow-hidden"><img src="https://cdn.discordapp.com/attachments/1524231652556013569/1530740431170568242/Logo_BockieMC.png?ex=6a74845e&is=6a7332de&hm=af23cda1dee562f7ee95b3f82383032550640a3c2c24fb9e6feb54d74fbf34e3&" class="w-full h-48 object-contain bg-[#0e1324] p-8" style="animation:float 4s infinite"><div class="p-6"><h3 class="pixel text-sm text-cyan-300">BOCKIEMC • MANAGER</h3><p class="text-xs text-white/50 mt-3 leading-relaxed">Actual Manager de BockieMC. Lidero equipo, reclutamiento, sanciones justas, actividad diaria y tickets pro. Comunidad limpia y activa 24/7.</p><div class="flex gap-2 mt-4"><span class="tag">MANAGER</span><span class="tag">STAFF LEAD</span><span class="tag">TICKETS</span></div></div></div>
-<div class="card overflow-hidden"><img src="https://cdn.discordapp.com/attachments/1213206514630656020/1505322743309144144/minehave1.png?ex=6a74fe0d&is=6a73ac8d&hm=5e5c83724773979f8d721f773a1b0db5a570eb0432ba3beabe2b0395428db5f1&" class="w-full h-48 object-cover"><div class="p-6"><h3 class="pixel text-sm text-violet-300">MINEHAVE • BUILDER</h3><p class="text-xs text-white/50 mt-3 leading-relaxed">Builder oficial en MineHave Network. Lobbies, PvP zones, spawns y decoración optimizada para modalidades competitivas.</p><div class="flex gap-2 mt-4"><span class="tag">BUILDER</span><span class="tag">LOBBYS</span><span class="tag">PVP</span></div></div></div>
+<div class="bg-glow"></div><div class="bg-glow2"></div>
+<nav><div class="logo">𝙄𝘼𝙄𝙈𝘽𝙓𝙏<span>.</span></div><div class="nav-links"><a class="active">Inicio</a><a>Sobre Mí</a><a>Proyectos</a><a>Contacto</a></div></nav>
+<div class="container">
+<div class="hero">
+<div class="badge">● COORDINADOR DE MINECRAFT JAVA & DISCORD</div>
+<h1>Transformo servidores en <span>comunidades épicas</span></h1>
+<p>Coordinador - Configurador Técnico - Community Builder. Especialista en crear experiencias de juego desde cero, gestionar staffs y llevar servidores de 0 a +500 jugadores activos.</p>
+<a class="btn" href="#">Explorar Portafolio →</a>
 </div>
-</section>
-
-<section id="studio" class="px-6 md:px-20 py-16 max-w-6xl mx-auto reveal"><h2 class="pixel text-xs tracking-widest text-white/40">04 / MI STUDIO</h2><div class="card p-8 mt-6"><h3 class="pixel text-sm">MORGAN STUDIO</h3><p class="text-xs text-white/40 mt-2">Setup completo de Discords y servidores Minecraft desde cero, con diseño AAA y glassmorphism.</p></div></section>
-
-<section id="contacto" class="px-6 py-20 text-center reveal"><h2 class="pixel text-xs tracking-widest text-white/40">05 / MI CONTACTO</h2><div class="card max-w-xl mx-auto p-10 mt-6"><h3 class="pixel text-xl">carlos061733</h3><p class="pixel text-[10px] text-white/30 mt-2">DISCORD • MÉXICO GMT-6</p><a href="https://discord.com/users/carlos061733" class="inline-block mt-6 bg-white text-black pixel text-[11px] font-bold px-10 py-3 rounded-xl hover:shadow-[0_0_30px_white] transition">ABRIR DISCORD →</a></div></section>
-
-<script>
-// 🎮 Fondo espacial animado
-const c=document.getElementById('space'),x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;
-let stars=[...Array(150)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*1.5,s:Math.random()*0.5}));
-function anim(){x.clearRect(0,0,c.width,c.height);stars.forEach(s=>{s.y+=s.s;if(s.y>c.height)s.y=0;x.fillStyle=s.r>1?'#7dd3fc':'#fff';x.globalAlpha=Math.random()*0.5+0.3;x.beginPath();x.arc(s.x,s.y,s.r,0,6.28);x.fill()});requestAnimationFrame(anim)}anim();
-// 🖱️ Luz que sigue mouse + Parallax
-document.addEventListener('mousemove',e=>{document.getElementById('mouse-light').style.setProperty('--x',e.clientX+'px');document.getElementById('mouse-light').style.setProperty('--y',e.clientY+'px')});
-window.addEventListener('scroll',()=>{document.querySelectorAll('.reveal').forEach(el=>{if(el.getBoundingClientRect().top < innerHeight-100)el.classList.add('active')})});
-window.dispatchEvent(new Event('scroll'));
-// 📱 Responsive resize
-window.addEventListener('resize',()=>{c.width=innerWidth;c.height=innerHeight});
-</script>
+<div class="stats">
+<div class="stat"><h3>5+</h3><p>Años Configurando</p></div>
+<div class="stat"><h3>12</h3><p>Servidores Gestionados</p></div>
+<div class="stat"><h3>24/7</h3><p>Soporte & Gestión</p></div>
+<div class="stat"><h3>100%</h3><p>Compromiso</p></div>
+</div>
+<div class="about">
+<div>⚡</div>
+<div>
+<h3>Hola, soy 𝙄𝘼𝙄𝙈𝘽𝙓𝙏</h3>
+<p>Coordinador principal de <b>ThorianMC</b> y experto en configuración de plugins, economía, rangos y crecimiento de comunidades. Empecé a los 12 años rompiendo servidores de Aternos, hoy creo Olimpos. Me especializo en orden, anti-grief y que la gente se sienta en casa.</p>
+<p style="margin-top:10px;font-family:'JetBrains Mono';font-size:11px;color:#6d5cff">📧 iaimbxt@thorianmc.gg • Discord: iaimbxt</p>
+</div>
+</div>
+<div class="quote">"Un staff no es un equipo de personas que mandan, es un equipo de personas que sirven y protegen la comunidad."</div>
+<h2 class="section-title">Mis Proyectos</h2>
+<div class="projects">
+<div class="p-card"><div class="tag">FUNDADOR & COORDINADOR</div><h4>ThorianMC</h4><p>Servidor Survival 1.20.1 temática Olimpo. Economía completa y comunidad tóxica 0.</p><a class="p-btn">🔗 thorianmc.net</a></div>
+<div class="p-card"><div class="tag">HEAD MANAGER</div><h4>Minevox</h4><p>Dirección general del servidor y optimización de flujo de trabajo del staff.</p><a class="p-btn">✓ Ver Caso</a></div>
+<div class="p-card"><div class="tag">MANAGER</div><h4>Comunidad de Ayis</h4><p>Gestión de 4 servidores de Discord (5k miembros), eventos y bots custom.</p><a class="p-btn">✓ Activo</a></div>
+<div class="p-card"><div class="tag">SENIOR MODERADOR</div><h4>SkyllexMC</h4><p>Administración del equipo de soporte y control de calidad del chat.</p><a class="p-btn">1 año</a></div>
+<div class="p-card"><div class="tag">BOT DEVELOPER</div><h4>Thor Bot v2</h4><p>Bot de Discord con tickets, verificación y economía. Python + discord.py</p><a class="p-btn">🤖 Código</a></div>
+<div class="p-card"><div class="tag">ESPECIALIDAD</div><h4>Anti-Grief</h4><p>Sistemas con CoreProtect y GriefPrevention. 0% robos, 0% dupeos.</p><a class="p-btn">🛡️ Seguro</a></div>
+</div>
+<div class="skills">
+<div class="skill-box"><h5>⚙️ Configuración Técnica</h5><div class="bar"><div class="fill" style="width:95%"></div></div><p style="font-size:11px;color:#8b90b8">Paper, Purpur, LuckPerms, EssentialsX, WorldGuard, TAB</p></div>
+<div class="skill-box"><h5>👑 Gestión de Comunidades</h5><div class="bar"><div class="fill" style="width:92%"></div></div><p style="font-size:11px;color:#8b90b8">Staff, Eventos, Discord, Moderación</p></div>
+</div>
+<div style="text-align:center;margin:40px 0;color:#8b90b8;font-size:12px;font-family:'JetBrains Mono'">© 2026 IAIMBXT — Hecho para dominar el Olimpo.</div>
+</div>
 </body>
 </html>
