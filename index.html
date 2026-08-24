@@ -1,111 +1,629 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IAIMBXT_ — Coordinador Minecraft</title>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IAIMBXT_ — Coordinador Serial Minecraft Java & Discord</title>
+<meta name="description" content="Portafolio profesional de IAIMBXT - Coordinador Serial Minecraft Java & Discord con 2+ meses de experiencia real">
+<meta name="author" content="IAIMBXT">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
+/* =================================================================== */
+/*  PORTAFOLIO PROFESIONAL IAIMBXT - COORDINADOR SERIAL                */
+/*  Diseño: Estilo Morgan con mejoras pro                              */
+/*  430+ líneas - Optimizado para GitHub Pages / Netlify               */
+/* =================================================================== */
+:root{
+--bg:#070A14;
+--bg2:#0c1020;
+--card:#10172c;
+--card2:#151e3a;
+--card3:#1a2447;
+--accent:#7c5cff;
+--accent2:#9d8cff;
+--accent3:#b8a9ff;
+--cyan:#4de2ff;
+--cyan2:#7deaff;
+--cyan3:#b1f0ff;
+--muted:#8c92b8;
+--muted2:#5f658a;
+--white:#eef1ff;
+--border:rgba(255,255,255,0.07);
+--border2:rgba(255,255,255,0.12);
+--glow:0 0 25px rgba(124,92,255,0.35);
+--glow2:0 0 30px rgba(77,226,255,0.35);
+--radius:20px;
+--radius2:16px;
+}
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#070A14;--card:#10172c;--accent:#7c5cff;--cyan:#4de2ff;--muted:#8c92b8}
-body{background:var(--bg);color:#fff;font-family:'JetBrains Mono',monospace;overflow-x:hidden}
-#stars{position:fixed;inset:0;z-index:0}
-nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;padding:16px 6%;background:rgba(7,10,20,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);font-size:10px;letter-spacing:1px}
-nav a{color:var(--muted);text-decoration:none;margin-left:18px;transition:.2s}nav a:hover{color:#fff}
-.reveal{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(.2,.8,.2,1)}.reveal.active{opacity:1;transform:translateY(0)}
-.hero{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr 0.85fr;max-width:1100px;margin:0 auto;padding:140px 6% 80px;gap:40px;align-items:center}
-.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(124,92,255,0.4);background:rgba(124,92,255,0.12);color:#a89bff;padding:8px 16px;border-radius:999px;font-size:9px;letter-spacing:1px}
-.dot{width:7px;height:7px;background:#3cff8a;border-radius:50%;box-shadow:0 0 10px #3cff8a;animation:pulse 1.4s infinite}@keyframes pulse{50%{opacity:.4}}
-.hero h1{font-family:'Syne';font-size:52px;line-height:.9;margin:18px 0 10px}.hero h1 span{color:var(--cyan);text-shadow:0 0 20px rgba(77,226,255,0.8);display:block;font-size:40px;letter-spacing:1px}
-.hero p{font-size:11px;color:var(--muted);line-height:1.9;max-width:520px}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.chip{font-size:9px;padding:7px 13px;border-radius:999px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08)}.chip.p{background:var(--accent);color:#fff;box-shadow:0 0 15px rgba(124,92,255,0.4)}
-.btns{display:flex;gap:10px;margin-top:22px}.btn{padding:12px 20px;border-radius:12px;font-size:10px;font-weight:800;text-decoration:none;transition:.25s}
-.btn1{background:var(--cyan);color:#000;box-shadow:0 0 25px rgba(77,226,255,0.4)}.btn2{background:rgba(255,255,255,0.07);color:#fff;border:1px solid rgba(255,255,255,0.12)}.btn:hover{transform:translateY(-3px) scale(1.02)}
-.img-wrap{position:relative;display:grid;place-items:center;animation:float 5s ease-in-out infinite}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-.glow{position:absolute;width:340px;height:340px;background:radial-gradient(circle, rgba(124,92,255,0.5), rgba(77,226,255,0.2), transparent 70%);filter:blur(22px)}
-.avatar{width:260px;height:260px;border-radius:24px;object-fit:cover;border:2px solid rgba(124,92,255,0.5);z-index:1;box-shadow:0 0 50px rgba(124,92,255,0.35), 0 0 0 1px rgba(255,255,255,0.05) inset}
-section{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:70px 6%}.label{font-size:9px;letter-spacing:4px;color:var(--muted);opacity:.5;margin-bottom:14px}
-h2{font-family:'Syne';font-size:30px}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
-.box{background:linear-gradient(180deg, rgba(20,28,60,0.9), rgba(16,23,44,0.9));border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:22px;backdrop-filter:blur(10px);transition:.3s}.box:hover{border-color:rgba(124,92,255,0.3);transform:translateY(-3px)}
-.box h4{font-size:11px;color:var(--cyan);margin-bottom:14px;letter-spacing:1px}.box li{font-size:10px;color:var(--muted);padding:6px 0;list-style:none;display:flex;gap:8px;line-height:1.6}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
-.card{background:var(--card);border:1px solid rgba(255,255,255,0.07);border-radius:18px;overflow:hidden;transition:.35s cubic-bezier(.2,.8,.2,1)}.card:hover{transform:translateY(-8px) scale(1.01);border-color:var(--accent);box-shadow:0 20px 50px rgba(0,0,0,0.6)}
-.card img{width:100%;height:160px;object-fit:cover}.body{padding:16px}.body small{font-size:8px;color:var(--accent);font-weight:800;letter-spacing:1px}.body h4{font-size:13px;margin:8px 0}.body p{font-size:10px;color:var(--muted);line-height:1.7}
-.contact{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.cbtn{display:flex;align-items:center;gap:12px;padding:16px 18px;border-radius:14px;background:var(--card);border:1px solid rgba(255,255,255,0.07);color:#fff;text-decoration:none;font-size:11px;transition:.3s;cursor:pointer}
-.cbtn img{width:22px;height:22px}.cbtn:hover{border-color:var(--cyan);transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,0.4)}
-.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#fff;color:#000;padding:10px 18px;border-radius:999px;font-size:11px;font-weight:700;opacity:0;pointer-events:none;transition:.3s;z-index:100}.toast.show{opacity:1;transform:translateX(-50%) translateY(-10px)}
-@media(max-width:900px){.hero{grid-template-columns:1fr;text-align:center}.hero p{margin:0 auto}.about-grid,.grid3,.contact{grid-template-columns:1fr}.img-wrap{order:-1}.avatar{width:200px;height:200px}}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{
+background:var(--bg);
+color:var(--white);
+font-family:'JetBrains Mono',monospace;
+overflow-x:hidden;
+line-height:1.65;
+-webkit-font-smoothing:antialiased;
+}
+/* ================= STARS BACKGROUND ================= */
+#stars{
+position:fixed;
+inset:0;
+z-index:0;
+pointer-events:none;
+opacity:0.9;
+}
+/* ================= GRADIENT ORBS ================= */
+.orb{
+position:fixed;
+border-radius:50%;
+filter:blur(90px);
+pointer-events:none;
+z-index:0;
+opacity:0.18;
+}
+.orb1{width:600px;height:600px;background:radial-gradient(circle, var(--accent), transparent);top:-150px;left:-150px}
+.orb2{width:500px;height:500px;background:radial-gradient(circle, var(--cyan), transparent);bottom:10%;right:-100px}
+/* ================= NAVBAR PRO ================= */
+nav{
+position:fixed;
+top:0;left:0;right:0;
+z-index:50;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 6%;
+background:rgba(7,10,20,0.82);
+backdrop-filter:blur(22px) saturate(1.3);
+-webkit-backdrop-filter:blur(22px) saturate(1.3);
+border-bottom:1px solid var(--border);
+font-size:10px;
+letter-spacing:1.5px;
+transition:.3s;
+}
+nav.scrolled{
+background:rgba(7,10,20,0.95);
+box-shadow:0 10px 40px rgba(0,0,0,0.4);
+}
+nav .logo{
+font-weight:800;
+font-size:13px;
+letter-spacing:1px;
+display:flex;
+align-items:center;
+gap:11px;
+color:var(--white);
+}
+nav .logo-icon{
+width:30px;height:30px;
+background:linear-gradient(135deg, #fff, #d0d6ff);
+color:#000;
+border-radius:9px;
+display:grid;
+place-items:center;
+font-weight:800;
+font-size:14px;
+box-shadow:0 4px 15px rgba(255,255,255,0.2);
+}
+nav .links{display:flex;gap:24px;align-items:center}
+nav a{
+color:var(--muted);
+text-decoration:none;
+transition:.25s;
+position:relative;
+font-weight:700;
+}
+nav a:hover{color:#fff}
+nav a.active{color:#fff}
+nav a::after{
+content:'';
+position:absolute;
+bottom:-6px;left:0;
+width:0;height:2px;
+background:linear-gradient(90deg, var(--accent), var(--cyan));
+transition:.35s cubic-bezier(.2,.8,.2,1);
+border-radius:2px;
+}
+nav a:hover::after, nav a.active::after{width:100%}
+/* ================= HERO SECTION ================= */
+.hero{
+position:relative;
+z-index:2;
+display:grid;
+grid-template-columns:1.15fr 0.85fr;
+max-width:1180px;
+margin:0 auto;
+padding:160px 6% 100px;
+gap:60px;
+align-items:center;
+min-height:92vh;
+}
+.badge{
+display:inline-flex;
+gap:9px;
+align-items:center;
+border:1px solid rgba(124,92,255,0.45);
+background:linear-gradient(90deg, rgba(124,92,255,0.16), rgba(77,226,255,0.12));
+color:#b8a9ff;
+padding:10px 18px;
+border-radius:999px;
+font-size:9px;
+letter-spacing:1.3px;
+box-shadow:var(--glow);
+backdrop-filter:blur(10px);
+font-weight:700;
+}
+.dot{
+width:8px;height:8px;
+background:#3cff8a;
+border-radius:50%;
+box-shadow:0 0 14px #3cff8a;
+animation:pulse 1.4s infinite;
+}
+@keyframes pulse{
+0%,100%{opacity:1;transform:scale(1)}
+50%{opacity:.55;transform:scale(0.85)}
+}
+.hero h1{
+font-family:'Syne',sans-serif;
+font-size:58px;
+line-height:.88;
+margin:22px 0 14px;
+letter-spacing:-1.2px;
+font-weight:800;
+}
+.hero h1 .cyan{
+color:var(--cyan);
+text-shadow:0 0 22px rgba(77,226,255,0.85), 0 0 50px rgba(77,226,255,0.35);
+display:block;
+font-size:44px;
+letter-spacing:1px;
+margin-top:6px;
+}
+.hero p{
+font-size:11.8px;
+color:var(--muted);
+line-height:2;
+max-width:560px;
+margin-top:10px;
+letter-spacing:0.2px;
+}
+.chips{display:flex;gap:9px;flex-wrap:wrap;margin:24px 0}
+.chip{
+font-size:9px;
+padding:8px 15px;
+border-radius:999px;
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.09);
+letter-spacing:0.6px;
+transition:.25s;
+font-weight:700;
+}
+.chip:hover{transform:translateY(-2px);border-color:rgba(255,255,255,0.15)}
+.chip.p{
+background:linear-gradient(135deg, var(--accent), #8b7cff);
+color:#fff;
+border-color:var(--accent);
+box-shadow:0 0 20px rgba(124,92,255,0.5);
+}
+.btns{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.btn{
+padding:14px 24px;
+border-radius:13px;
+font-size:10.5px;
+font-weight:800;
+text-decoration:none;
+letter-spacing:1.2px;
+transition:.35s cubic-bezier(.2,.8,.2,1);
+display:inline-flex;
+align-items:center;
+gap:9px;
+cursor:pointer;
+}
+.btn1{
+background:linear-gradient(135deg, var(--cyan), #7deaff);
+color:#000;
+box-shadow:0 0 35px rgba(77,226,255,0.5), 0 8px 20px rgba(0,0,0,0.2);
+}
+.btn2{
+background:rgba(255,255,255,0.07);
+color:#fff;
+border:1px solid rgba(255,255,255,0.13);
+backdrop-filter:blur(12px);
+}
+.btn:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 12px 30px rgba(0,0,0,0.3)}
+/* ================= IMAGE FLOAT ================= */
+.img-wrap{
+position:relative;
+display:grid;
+place-items:center;
+animation:float 5.5s ease-in-out infinite;
+}
+@keyframes float{
+0%,100%{transform:translateY(0) rotate(0deg)}
+50%{transform:translateY(-18px) rotate(1deg)}
+}
+.glow-img{
+position:absolute;
+width:400px;height:400px;
+background:radial-gradient(circle at center, rgba(124,92,255,0.58), rgba(77,226,255,0.22), transparent 72%);
+filter:blur(28px);
+border-radius:50%;
+}
+.avatar{
+width:300px;height:300px;
+border-radius:28px;
+object-fit:cover;
+border:2px solid rgba(124,92,255,0.6);
+z-index:1;
+box-shadow:0 0 70px rgba(124,92,255,0.45), inset 0 0 0 1px rgba(255,255,255,0.08), 0 20px 60px rgba(0,0,0,0.5);
+transition:.45s cubic-bezier(.2,.8,.2,1);
+}
+.avatar:hover{transform:scale(1.03) rotate(1deg);box-shadow:0 0 90px rgba(124,92,255,0.65)}
+/* ================= SECTIONS BASE ================= */
+section{
+position:relative;
+z-index:2;
+max-width:1180px;
+margin:0 auto;
+padding:85px 6%;
+}
+.label{
+font-size:9.5px;
+letter-spacing:4.5px;
+color:var(--muted);
+opacity:.6;
+margin-bottom:18px;
+text-transform:uppercase;
+font-weight:700;
+}
+h2{
+font-family:'Syne',sans-serif;
+font-size:34px;
+line-height:1.1;
+letter-spacing:-0.6px;
+font-weight:800;
+}
+.sub{
+font-size:11.5px;
+color:var(--muted);
+margin-top:12px;
+max-width:650px;
+line-height:1.9;
+}
+/* ABOUT GRID */
+.about-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+margin-top:30px;
+}
+.box{
+background:linear-gradient(180deg, rgba(22,30,62,0.92), rgba(16,23,44,0.92));
+border:1px solid var(--border);
+border-radius:22px;
+padding:26px;
+backdrop-filter:blur(14px);
+transition:.4s cubic-bezier(.2,.8,.2,1);
+position:relative;
+overflow:hidden;
+}
+.box::before{
+content:'';
+position:absolute;
+top:0;left:0;right:0;
+height:1px;
+background:linear-gradient(90deg, transparent, rgba(124,92,255,0.4), transparent);
+}
+.box:hover{
+border-color:rgba(124,92,255,0.35);
+transform:translateY(-6px);
+box-shadow:0 25px 60px rgba(0,0,0,0.55), var(--glow);
+}
+.box h4{
+font-size:11.5px;
+color:var(--cyan);
+margin-bottom:18px;
+letter-spacing:1.3px;
+font-weight:800;
+}
+.box li{
+font-size:10.8px;
+color:var(--muted);
+padding:8px 0;
+list-style:none;
+display:flex;
+gap:10px;
+line-height:1.75;
+}
+/* PROJECTS GRID */
+.grid3{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+margin-top:28px;
+}
+.card{
+background:linear-gradient(180deg, var(--card), var(--bg2));
+border:1px solid var(--border);
+border-radius:22px;
+overflow:hidden;
+transition:.45s cubic-bezier(.2,.8,.2,1);
+position:relative;
+}
+.card::after{
+content:'';
+position:absolute;
+inset:0;
+background:linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.4));
+pointer-events:none;
+}
+.card:hover{
+transform:translateY(-12px) scale(1.015);
+border-color:var(--accent);
+box-shadow:0 30px 70px rgba(0,0,0,0.7), var(--glow);
+}
+.card img{width:100%;height:180px;object-fit:cover;transition:.4s}
+.card:hover img{transform:scale(1.05)}
+.body{padding:20px;position:relative;z-index:1}
+.body small{font-size:8.5px;color:var(--accent);font-weight:800;letter-spacing:1.2px;text-transform:uppercase}
+.body h4{font-size:15px;margin:10px 0 8px;font-family:'Syne',sans-serif;letter-spacing:-0.2px}
+.body p{font-size:10.8px;color:var(--muted);line-height:1.8}
+/* CONTACT */
+.contact{
+margin-top:32px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:16px;
+}
+.cbtn{
+display:flex;
+align-items:center;
+gap:16px;
+padding:20px 22px;
+border-radius:18px;
+background:linear-gradient(180deg, var(--card), rgba(16,23,44,0.8));
+border:1px solid var(--border);
+color:#fff;
+text-decoration:none;
+font-size:11.5px;
+transition:.4s cubic-bezier(.2,.8,.2,1);
+cursor:pointer;
+backdrop-filter:blur(10px);
+}
+.cbtn img{width:26px;height:26px;filter:brightness(1.15)}
+.cbtn:hover{
+border-color:var(--cyan);
+transform:translateY(-6px) scale(1.01);
+box-shadow:0 20px 40px rgba(0,0,0,0.55), var(--glow2);
+}
+.cbtn .small{font-size:9.5px;color:var(--muted);margin-top:3px}
+/* ================= REVEAL ANIMATIONS ================= */
+.reveal{opacity:0;transform:translateY(50px);transition:all 1s cubic-bezier(.2,.8,.2,1)}
+.reveal.active{opacity:1;transform:translateY(0)}
+.delay1{transition-delay:.12s}.delay2{transition-delay:.22s}.delay3{transition-delay:.32s}
+/* ================= TOAST ================= */
+.toast{
+position:fixed;
+bottom:32px;left:50%;
+transform:translateX(-50%) translateY(24px);
+background:#fff;color:#000;
+padding:13px 22px;
+border-radius:999px;
+font-size:11.5px;
+font-weight:800;
+opacity:0;
+pointer-events:none;
+transition:.45s cubic-bezier(.2,.8,.2,1);
+z-index:200;
+box-shadow:0 12px 35px rgba(0,0,0,0.35);
+letter-spacing:0.3px;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+/* ================= RESPONSIVE ================= */
+@media(max-width:1000px){
+.hero{grid-template-columns:1fr;text-align:center;padding:140px 6% 70px;gap:40px}
+.hero p{margin:10px auto 0}
+.chips,.btns{justify-content:center}
+.about-grid,.grid3,.contact{grid-template-columns:1fr}
+.img-wrap{order:-1}
+.avatar{width:240px;height:240px}
+h2{font-size:28px}
+}
 </style>
 </head>
 <body>
 <canvas id="stars"></canvas>
-<nav><div style="font-weight:800;letter-spacing:1px">𝙄𝘼𝙄𝙈𝘽𝙓𝙏_</div><div><a href="#inicio">INICIO</a><a href="#sobre">SOBRE MÍ</a><a href="#proyectos">PROYECTOS</a><a href="#contacto">CONTACTO</a></div></nav>
+<div class="orb orb1"></div><div class="orb orb2"></div>
 
+<!-- NAVBAR -->
+<nav id="navbar">
+<div class="logo"><div class="logo-icon">I</div> 𝙄𝘼𝙄𝙈𝘽𝙓𝙏_</div>
+<div class="links">
+<a href="#inicio" class="active">INICIO</a>
+<a href="#sobre">SOBRE MÍ</a>
+<a href="#proyectos">PROYECTOS</a>
+<a href="#contacto">CONTACTO</a>
+</div>
+</nav>
+
+<!-- HERO SECTION -->
 <div class="hero" id="inicio">
 <div class="reveal">
-<div class="badge"><div class="dot"></div> DISPONIBLE • COORDINADOR SERIAL</div>
-<h1>𝙄𝘼𝙄𝙈𝘽𝙓𝙏 <span>COORDINADOR</span></h1>
-<p>Soy coordinador serial de Minecraft Java & Discord. No soy dev, no soy builder — soy el que pone orden. Con 2+ meses he aprendido que un servidor no muere por falta de plugins, muere por falta de liderazgo.</p>
-<div class="chips"><div class="chip p">COORDINADOR SERIAL</div><div class="chip">STAFF LEAD</div><div class="chip">COMUNIDADES</div><div class="chip">ANTI-TOXIC</div></div>
-<div class="btns"><a class="btn btn1" href="#proyectos">VER PROYECTOS →</a><a class="btn btn2" href="#sobre">SOBRE MÍ</a></div>
+<div class="badge"><div class="dot"></div> DISPONIBLE PARA PROYECTOS • COORDINADOR SERIAL</div>
+<h1>𝙄𝘼𝙄𝙈𝘽𝙓𝙏 <span class="cyan">COORDINADOR</span></h1>
+<p>Soy coordinador serial de Minecraft Java & Discord con 2+ meses de experiencia real. No soy dev, no soy builder — soy el que pone orden, sostiene el staff y mantiene viva la comunidad. Un servidor no muere por falta de plugins, muere por falta de liderazgo.</p>
+<div class="chips">
+<div class="chip p">COORDINADOR SERIAL</div>
+<div class="chip">STAFF LEAD</div>
+<div class="chip">GESTIÓN DE EQUIPOS</div>
+<div class="chip">ANTI-TOXICIDAD</div>
+<div class="chip">DISCORD MANAGER</div>
 </div>
-<div class="img-wrap reveal"><div class="glow"></div><img class="avatar" src="https://cdn.discordapp.com/attachments/1538817358716731404/1541279682106753065/ee243e3e468599e8e1e764b2596a2694.jpg?ex=6a8d040f&is=6a8bb28f&hm=ac488c6da9a46c0eb5313fdc53a23e12cebc3f8bba08cc441ee21cf9c24f57c6" alt="IAIMBXT"></div>
+<div class="btns">
+<a class="btn btn1" href="#proyectos">VER TRAYECTORIA →</a>
+<a class="btn btn2" href="#contacto">HABLAR CONMIGO</a>
+</div>
+</div>
+<div class="img-wrap reveal delay1">
+<div class="glow-img"></div>
+<img class="avatar" src="https://cdn.discordapp.com/attachments/1538817358716731404/1541279682106753065/ee243e3e468599e8e1e764b2596a2694.jpg?ex=6a8d040f&is=6a8bb28f&hm=ac488c6da9a46c0eb5313fdc53a23e12cebc3f8bba08cc441ee21cf9c24f57c6" alt="IAIMBXT Foto Principal">
+</div>
 </div>
 
-<section id="sobre"><div class="label reveal">01 / SOBRE MÍ</div><h2 class="reveal">Más que staff, soy el que sostiene el servidor</h2>
+<!-- SOBRE MI SECTION -->
+<section id="sobre">
+<div class="label reveal">01 / SOBRE MÍ — COORDINADOR SERIAL</div>
+<h2 class="reveal">Más que staff, soy el que sostiene el servidor entero</h2>
+<p class="sub reveal">No configuro por configurar. Coordino. Mi trabajo es que tu servidor se sienta vivo, ordenado, justo y sin peleas internas. Experiencia real, no teoría.</p>
 <div class="about-grid">
-<div class="box reveal"><h4>🧠 MI FILOSOFÍA DE COORDINADOR</h4>
-<li>💎 <b>Un servidor no necesita más rangos, necesita orden.</b> Yo creo el orden.</li>
-<li>⚖️ <b>Reglas justas, no abusivas.</b> Sanciones con pruebas, apelaciones reales, cero favoritismos.</li>
-<li>👥 <b>Staff que sirve, no que manda.</b> Enseño a mi equipo a ayudar, no a presumir rango.</li>
-<li>🔥 <b>Ambiente sano > Números.</b> Prefiero 50 usuarios activos y felices que 500 tóxicos.</li>
-<li>📈 <b>Crecimiento orgánico.</b> Eventos, dinámicas y activación diaria para que nadie se aburra.</li>
-<li>🛡️ <b>Protección total.</b> Anti-grief, anti-robo, anti-dupeo con logs y revisión diaria.</li>
+<div class="box reveal">
+<h4>🧠 MI FILOSOFÍA COMO COORDINADOR SERIAL</h4>
+<li>💎 <b>Orden antes que rangos.</b> Un servidor con 20 rangos y 0 orden muere en 2 semanas. Yo creo sistemas.</li>
+<li>⚖️ <b>Justicia real, no favoritismos.</b> Todas las sanciones con pruebas, apelaciones escuchadas, trato igual para todos.</li>
+<li>👥 <b>Staff que sirve, no que manda.</b> Entreno a mi equipo para ayudar, no para presumir /ban o /mute.</li>
+<li>🔥 <b>Comunidad sana > números.</b> Prefiero 50 usuarios felices y activos que 500 tóxicos spameando y peleando.</li>
+<li>📈 <b>Activación diaria real.</b> Eventos, dinámicas, anuncios y presencia constante para que nadie se aburra.</li>
+<li>🛡️ <b>Seguridad total 24/7.</b> Anti-grief, anti-robo, anti-dupeo con revisión de logs y CoreProtect diaria.</li>
+<li>🔄 <b>Experiencia serial.</b> He sido Owner, Ex-Owner y Manager. Sé lo que duele perder una comunidad y por eso la cuido como si fuera mía.</li>
+<li>🎯 <b>Resultado:</b> Comunidades estables, staff organizado y jugadores que se quedan.</li>
 </div>
-<div class="box reveal"><h4>⚡ LO QUE HAGO DÍA A DÍA</h4>
-<li>📌 Organizo todo el staff: horarios, reportes, tareas y supervisión</li>
-<li>📌 Reviso tickets, apelaciones y conflictos entre usuarios</li>
-<li>📌 Filtro gente tóxica y mantengo el chat limpio y divertido</li>
-<li>📌 Creo y actualizo guías, reglamentos y anuncios claros</li>
-<li>📌 Configuro Discord con sistema pro: verificación, tickets, logs, roles, AutoMod</li>
-<li>📌 Doy estabilidad: si algo se rompe, lo arreglo y comunico sin pánico</li>
-<li>📌 Soy serial: he sido Owner y Manager, sé lo que duele perder una comunidad y por eso la cuido</li>
+<div class="box reveal delay1">
+<h4>⚡ LO QUE HAGO TODOS LOS DÍAS COMO COORDINADOR</h4>
+<li>📌 Organizo staff completo: horarios, reportes, tareas diarias y supervisión 24/7 real</li>
+<li>📌 Reviso tickets, apelaciones, reportes de grief, robos y peleas entre usuarios sin demora</li>
+<li>📌 Filtro gente tóxica al instante, mantengo el chat limpio, divertido y respetuoso</li>
+<li>📌 Creo reglamentos claros, guías de staff y anuncios que todos entienden sin confusión</li>
+<li>📌 Configuro Discord nivel pro: verificación, tickets, logs completos, AutoMod, roles y permisos</li>
+<li>📌 Doy estabilidad emocional al equipo: si algo se rompe, lo arreglo y comunico sin pánico</li>
+<li>📌 Motivo al equipo: reuniones cortas, feedback sincero y reconocimiento por buen trabajo</li>
+<li>📌 Cuido la experiencia del jugador nuevo: bienvenida, guía y seguimiento para que se quede</li>
+<li>📌 Prevengo dramas de staff: mediación, reglas internas y ambiente laboral sano</li>
 </div>
 </div>
 </section>
 
-<section id="proyectos"><div class="label reveal">02 / PROYECTOS</div><h2 class="reveal">Donde he sido coordinador</h2>
+<!-- PROYECTOS SECTION -->
+<section id="proyectos">
+<div class="label reveal">02 / MIS PROYECTOS REALES — TRAYECTORIA</div>
+<h2 class="reveal">Donde he puesto orden y liderazgo</h2>
+<p class="sub reveal">No son servidores inventados. Son proyectos donde he sido Owner, Manager y responsable real.</p>
 <div class="grid3">
-<div class="card reveal"><img src="https://cdn.discordapp.com/attachments/1538817358716731404/1540985840652787762/IMG-20260823-WA8499.jpg?ex=6a8c9b26&is=6a8b49a6&hm=d289f29c964d5a61c02b0c1afcb99afc24b8a7dfb3be7348389545644b33dedd"><div class="body"><small>OWNER & COORDINADOR • ACTUAL</small><h4>ThorianMC</h4><p>Mi proyecto principal. Owner y coordinador. Survival 1.20.1 Olimpo. Gestión total de staff, normas y comunidad.</p></div></div>
-<div class="card reveal"><img src="https://cdn.discordapp.com/attachments/1538817358716731404/1541277844187914352/IMG-20260818-WA0149.jpg?ex=6a8d0259&is=6a8bb0d9&hm=218147851ddaa1492306e261f92c37985960884ecb8393a2b220feba87b032b0"><div class="body"><small>EX DUEÑO & MANAGER</small><h4>NoxAnamires</h4><p>Ex Dueño y Manager. Puse orden total, sistema de staff y crecimiento activo. Aprendí a liderar bajo presión.</p></div></div>
-<div class="card reveal"><img src="https://cdn.discordapp.com/attachments/1538817358716731404/1541277844187914352/IMG-20260818-WA0149.jpg?ex=6a8d0259&is=6a8bb0d9&hm=218147851ddaa1492306e261f92c37985960884ecb8393a2b220feba87b032b0"><div class="body"><small>EX DUEÑO</small><h4>MineKravex</h4><p>Ex Dueño. Encargado de toda la gestión de Minecraft y Discord. Eventos, soporte, seguridad y activación de comunidad.</p></div></div>
+<div class="card reveal"><img src="https://cdn.discordapp.com/attachments/1538817358716731404/1540985840652787762/IMG-20260823-WA8499.jpg?ex=6a8c9b26&is=6a8b49a6&hm=d289f29c964d5a61c02b0c1afcb99afc24b8a7dfb3be7348389545644b33dedd" alt="ThorianMC"><div class="body"><small>OWNER & COORDINADOR • ACTUAL • ACTIVO</small><h4>ThorianMC</h4><p>Mi proyecto principal y actual. Owner y coordinador general. Survival 1.20.1 temática Olimpo. Gestión total de staff, normas, tickets, eventos y crecimiento orgánico de la comunidad.</p></div></div>
+<div class="card reveal delay1"><img src="https://cdn.discordapp.com/attachments/1538817358716731404/1541277844187914352/IMG-20260818-WA0149.jpg?ex=6a8d0259&is=6a8bb0d9&hm=218147851ddaa1492306e261f92c37985960884ecb8393a2b220feba87b032b0" alt="NoxAnamires"><div class="body"><small>EX DUEÑO & MANAGER • GESTIÓN COMPLETA</small><h4>NoxAnamires</h4><p>Ex Dueño y Manager. Implementé sistema de moderación, reclutamiento, organización completa y cultura de trabajo. Llevé comunidad de 0 a activa y ordenada con equipo de 10+ staffs.</p></div></div>
+<div class="card reveal delay2"><img src="https://cdn.discordapp.com/attachments/1538817358716731404/1541277844187914352/IMG-20260818-WA0149.jpg?ex=6a8d0259&is=6a8bb0d9&hm=218147851ddaa1492306e261f92c37985960884ecb8393a2b220feba87b032b0" alt="MineKravex"><div class="body"><small>EX DUEÑO • FUNDADOR</small><h4>MineKravex</h4><p>Ex Dueño y fundador. Gestión completa de servidor Minecraft Java y Discord. Encargado de staff, eventos, soporte, seguridad anti-grief, retención de usuarios y activación diaria.</p></div></div>
 </div>
 </section>
 
-<section id="contacto"><div class="label reveal">03 / CONTÁCTAME</div><h2 class="reveal">¿Necesitas un coordinador serio?</h2><p class="reveal" style="font-size:11px;color:#8c92b8;max-width:560px;margin-top:10px;line-height:1.8">No busques un dev si lo que necesitas es orden. Si tu staff está desorganizado, tu chat es tóxico o tu comunidad se está muriendo, habla conmigo.</p>
+<!-- CONTACTO SECTION -->
+<section id="contacto">
+<div class="label reveal">03 / CONTACTO PROFESIONAL</div>
+<h2 class="reveal">¿Tu servidor necesita orden real?</h2>
+<p class="sub reveal">Si tu staff está desorganizado, tu chat es tóxico, tu Discord es un caos o tu comunidad se está muriendo por falta de liderazgo — habla conmigo. No soy dev, soy coordinador serial.</p>
 <div class="contact reveal">
-<div class="cbtn" onclick="copyDC()"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png"><div><div style="font-weight:800">Discord</div><div style="font-size:9px;color:var(--muted)">iaimbxt. — click para copiar</div></div></div>
-<a class="cbtn" href="https://tiktok.com/@morganstudio0" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png"><div><div style="font-weight:800">TikTok</div><div style="font-size:9px;color:var(--muted)">@morganstudio0</div></div></a>
-<a class="cbtn" href="mailto:iaimbxtcontacted@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"><div><div style="font-weight:800">Gmail</div><div style="font-size:9px;color:var(--muted)">iaimbxtcontacted@gmail.com</div></div></a>
+<div class="cbtn" onclick="copyDC()"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" alt="Discord Icon"><div><div style="font-weight:800">Discord — Click para copiar</div><div class="small">Usuario: iaimbxt. — Disponible 24/7</div></div></div>
+<a class="cbtn" href="https://tiktok.com/@morganstudio0" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok Icon"><div><div style="font-weight:800">TikTok Oficial</div><div class="small">@morganstudio0 — Contenido de coordinación</div></div></a>
+<a class="cbtn" onclick="openGmail()"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail Icon"><div><div style="font-weight:800">Gmail — Contacto Pro</div><div class="small">iaimbxtcontacted@gmail.com — Click para escribir</div></div></a>
 </div>
-<div style="margin-top:70px;text-align:center;font-size:9px;color:var(--muted);opacity:.4;letter-spacing:2px" class="reveal">© 2026 IAIMBXT_ — COORDINADOR SERIAL • 2+ MESES • MÉXICO</div>
+<div style="margin-top:100px;text-align:center;font-size:9px;color:var(--muted);opacity:.45;letter-spacing:2.5px;line-height:1.8" class="reveal">
+© 2026 IAIMBXT_ — COORDINADOR SERIAL MINECRAFT JAVA & DISCORD<br>
+2+ MESES DE EXPERIENCIA REAL • MÉXICO • DISPONIBLE PARA NUEVOS PROYECTOS<br>
+DISEÑO INSPIRADO EN MORGAN_ PERO MÁS ÉPICO
+</div>
 </section>
 
 <div class="toast" id="toast">✅ Usuario copiado: iaimbxt.</div>
 
 <script>
-// estrellas
-const c=document.getElementById('stars'),x=c.getContext('2d');function rs(){c.width=innerWidth;c.height=innerHeight}rs();
-let s=[...Array(180)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*1.3+0.2,o:Math.random()*0.6}));
-function dr(){x.clearRect(0,0,c.width,c.height);s.forEach(p=>{x.beginPath();x.arc(p.x,p.y,p.r,0,6.28);x.fillStyle=`rgba(255,255,255,${p.o})`;x.fill();p.y+=0.15;if(p.y>c.height){p.y=0;p.x=Math.random()*c.width}});requestAnimationFrame(dr)}dr();window.onresize=rs;
+// ============ FONDO DE ESTRELLAS ANIMADAS PRO ============
+const canvas=document.getElementById('stars');
+const ctx=canvas.getContext('2d');
+function resizeStars(){canvas.width=innerWidth;canvas.height=innerHeight}
+resizeStars();
+let stars=[...Array(240)].map(()=>({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*1.5+0.15,
+o:Math.random()*0.75,
+sp:Math.random()*0.35+0.08
+}));
+function drawStars(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+stars.forEach(p=>{
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fillStyle=`rgba(255,255,255,${p.o})`;
+ctx.fill();
+p.y+=p.sp;
+if(p.y>canvas.height){p.y=0;p.x=Math.random()*canvas.width}
+});
+requestAnimationFrame(drawStars)
+}
+drawStars();
+window.addEventListener('resize',resizeStars);
 
-// scroll animation deslizamiento
-const obs=new IntersectionObserver((e)=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('active')})},{threshold:0.15});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+// ============ ANIMACIÓN DE DESLIZAMIENTO AL SCROLL ============
+const observer=new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('active');
+}
+});
+},{threshold:0.14, rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-// copiar dc
-function copyDC(){navigator.clipboard.writeText('iaimbxt.');const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000)}
+// ============ NAVBAR SCROLL EFFECT ============
+window.addEventListener('scroll',()=>{
+const nav=document.getElementById('navbar');
+if(window.scrollY>30){nav.classList.add('scrolled')}else{nav.classList.remove('scrolled')}
+});
+
+// ============ COPIAR DISCORD USER ============
+function copyDC(){
+navigator.clipboard.writeText('iaimbxt.');
+const t=document.getElementById('toast');
+t.textContent='✅ Usuario copiado: iaimbxt.';
+t.classList.add('show');
+setTimeout(()=>t.classList.remove('show'),2400);
+}
+
+// ============ ABRIR GMAIL AUTOMÁTICO CON MENSAJE PREDEFINIDO ============
+function openGmail(){
+const to="iaimbxtcontacted@gmail.com";
+const subject="Hola IAIMBXT - Necesito Coordinador para mi servidor";
+const body=`Hola IAIMBXT_,
+
+Vi tu portafolio y me interesa contratarte como Coordinador para mi servidor de Minecraft Java / Discord.
+
+Mi servidor es:
+Tipo de ayuda que necesito:
+Presupuesto / Horario:
+
+¿Estás disponible? Me gustaría hablar contigo.
+
+Mi Discord es:
+
+Gracias!`;
+const gmailUrl=`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+window.open(gmailUrl, '_blank');
+}
+
+// ============ PARALLAX SUAVE EN HERO ============
+let ticking=false;
+window.addEventListener('scroll',()=>{
+if(!ticking){
+window.requestAnimationFrame(()=>{
+let sc=window.scrollY;
+let hero=document.querySelector('.hero');
+if(hero && sc<800){
+hero.style.transform=`translateY(${sc*0.06}px)`;
+hero.style.opacity=`${1 - sc*0.0005}`;
+}
+ticking=false;
+});
+ticking=true;
+}
+});
 </script>
 </body>
 </html>
